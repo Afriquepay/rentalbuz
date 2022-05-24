@@ -75,10 +75,14 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	// 'hostname' => 'localhost',
+	// 'username' => 'rentalbuz_rentalbuz',
+	// 'password' => 'r%nT@lS0luTi0N',
+	// 'database' => 'rentalbuz_rentalbuz',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'afriq_db',
+	'database' => 'rentalbuz',
 	//'hostname' => '127.0.0.1',
 	//'username' => 'root',
 	//'password' => 'October@2019',
