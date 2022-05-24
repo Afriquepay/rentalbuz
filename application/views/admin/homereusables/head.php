@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css">
+
     <link rel="stylesheet" href="<?=base_url();?>uploads/vendor/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="<?=base_url();?>uploads/vendor/animate/animate.compat.css">
     <link rel="stylesheet" href="<?=base_url();?>uploads/vendor/font-awesome/css/all.min.css" />

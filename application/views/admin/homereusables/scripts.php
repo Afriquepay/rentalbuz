@@ -1,5 +1,7 @@
 <!-- Vendor -->
 <script src="<?=base_url();?>uploads/vendor/jquery/jquery.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+
 <script src="<?=base_url();?>uploads/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
 <script src="<?=base_url();?>uploads/vendor/popper/umd/popper.min.js"></script>
 <script src="<?=base_url();?>uploads/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

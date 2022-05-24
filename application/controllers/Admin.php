@@ -263,12 +263,12 @@ class Admin extends CI_Controller
 
       $this->checkSession();
 
-      $alluser = $this->db->select('*')->from('usertbl')->get();
-      $user_count = count($alluser->result_array());
+      // $alluser = $this->db->select('*')->from('usertbl')->get();
+      // $user_count = count($alluser->result_array());
 
-      $data['user_count'] = $user_count;
+      // $data['user_count'] = $user_count;
 
-      $this->load->view('admin/dashboard',$data);
+      $this->load->view('admin/dashboard');
    }
 
    public function createUserPage()

@@ -2,7 +2,7 @@
 <header class="header">
     <div class="logo-container">
         <a href="../4.0.0" class="logo">
-            <img src="<?=base_url();?>uploads/img/adminafripay.png" width="100" height="35" alt="Porto Admin" />
+            <img src="<?=base_url();?>uploads/assets/images/rentalbuz.png" width="150" height="40" alt="Porto Admin" />
         </a>
 
         <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
