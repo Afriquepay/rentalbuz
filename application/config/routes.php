@@ -49,56 +49,60 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'home';
+$route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-//this part is for the admin url path match
-$route['admin/signin'] = 'Admin/signInPage';
-$route['admin/signup'] = 'Admin/signUpPage';
-$route['admin/dashboard'] = 'Admin/dashboardPage';
+// //this part is for the admin url path match
+// $route['about'] = 'Home/about';
+// $route['contact'] = 'Home/contact';
+// $route['faq'] = 'Home/faq';
+// $route['register'] = 'Home/register';
+// $route['login'] = 'Home/login';
+// $route['admin/signup'] = 'Admin/signUpPage';
+// $route['admin/dashboard'] = 'Admin/dashboardPage';
 
-//Authentication route for users 
-$route['admin/processlogin']['post'] = 'Admin/processlogin';
-$route['admin/logout']['post'] = 'Admin/logout';
+// //Authentication route for users 
+// $route['admin/processlogin']['post'] = 'Admin/processlogin';
+// $route['admin/logout']['post'] = 'Admin/logout';
 
-// This controllers are for the users
-$route['admin/create-user']['get'] = 'Admin/createUserPage';
-$route['admin/create_user']['post'] = 'Admin/createUser';
+// // This controllers are for the users
+// $route['admin/create-user']['get'] = 'Admin/createUserPage';
+// $route['admin/create_user']['post'] = 'Admin/createUser';
 
-$route['admin/manage-user'] = 'Admin/manageUserPage';
-$route['admin/edit-user/:num']['get'] = 'Admin/editUserPage';
-$route['admin/update_user']['post'] = 'Admin/updateUser';
-$route['admin/deleteuser/:num']['get'] = 'Admin/deleteUser';
+// $route['admin/manage-user'] = 'Admin/manageUserPage';
+// $route['admin/edit-user/:num']['get'] = 'Admin/editUserPage';
+// $route['admin/update_user']['post'] = 'Admin/updateUser';
+// $route['admin/deleteuser/:num']['get'] = 'Admin/deleteUser';
 
-$route['admin/fund-user']['get'] = 'Admin/fundUserPage';
-$route['admin/funduser']['post'] = 'Admin/fundUser';
-
-
-// This session is for enveloper controllers
-$route['admin/manage-envelope-user'] = 'Admin/manageEnvelopeUserPage';
-$route['admin/deleteenvuser/:num']['get'] = 'Admin/deleteEnvUser';
-
-$route['admin/manage-envelope'] = 'Admin/manageEnvelopePage';
-$route['admin/view-envelope/:num'] = 'Admin/viewEnvelopePage';
-
-//this is for the Escrow
-$route['admin/manageescrow'] = 'Admin/manageEscrowPage';
-$route['admin/manage-disputed-escrow'] = 'Admin/manageDisputedEscrowPage';
-$route['admin/view-escrow/:num']['get'] = 'Admin/viewEscrowPage';
-$route['admin/view-escrow/resolve/:num']['get'] = 'Admin/resolve';
-$route['admin/view-escrow/review/:num']['get'] = 'Admin/review';
+// $route['admin/fund-user']['get'] = 'Admin/fundUserPage';
+// $route['admin/funduser']['post'] = 'Admin/fundUser';
 
 
-// for the basket controller
-$route['admin/manage-basket'] = 'Admin/manageBasketPage';
-$route['admin/deletebasket/:num']['get'] = 'Admin/deleteBasket';
+// // This session is for enveloper controllers
+// $route['admin/manage-envelope-user'] = 'Admin/manageEnvelopeUserPage';
+// $route['admin/deleteenvuser/:num']['get'] = 'Admin/deleteEnvUser';
 
-$route['admin/fund-basket'] = 'Admin/fundBasketPage';
-$route['admin/fundbasket']['post'] = 'Admin/fundBasket';
+// $route['admin/manage-envelope'] = 'Admin/manageEnvelopePage';
+// $route['admin/view-envelope/:num'] = 'Admin/viewEnvelopePage';
+
+// //this is for the Escrow
+// $route['admin/manageescrow'] = 'Admin/manageEscrowPage';
+// $route['admin/manage-disputed-escrow'] = 'Admin/manageDisputedEscrowPage';
+// $route['admin/view-escrow/:num']['get'] = 'Admin/viewEscrowPage';
+// $route['admin/view-escrow/resolve/:num']['get'] = 'Admin/resolve';
+// $route['admin/view-escrow/review/:num']['get'] = 'Admin/review';
 
 
-// this is for wallet controller
-$route['admin/manage-transactions']['get'] = 'Admin/manageTransactionsPage';
+// // for the basket controller
+// $route['admin/manage-basket'] = 'Admin/manageBasketPage';
+// $route['admin/deletebasket/:num']['get'] = 'Admin/deleteBasket';
+
+// $route['admin/fund-basket'] = 'Admin/fundBasketPage';
+// $route['admin/fundbasket']['post'] = 'Admin/fundBasket';
+
+
+// // this is for wallet controller
+// $route['admin/manage-transactions']['get'] = 'Admin/manageTransactionsPage';
 
 

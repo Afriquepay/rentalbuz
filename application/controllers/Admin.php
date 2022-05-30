@@ -29,6 +29,19 @@ class Admin extends CI_Controller
    }
 
 
+   public function new_loan()
+   {
+      $this->checkSession();
+      $userVerify = $this->db->select('*')->from('user')->where('status','verify')->get();
+      $agentVerify = $this->db->select('*')->from('employee')->where(['role'=>'agent','status'=>'verified'])->get();
+      $states = $this->db->select('*')->from('states')->get();
+
+      $data['userVerify'] = $userVerify->result_array();
+      $data['agentVerify'] = $agentVerify->result_array();
+      $data['states'] = $states->result_array();
+     $this->load->view('admin/newloan',$data);
+   }
+
    public function fundBasketPage()
    {
       $this->checkSession();
@@ -250,7 +263,7 @@ class Admin extends CI_Controller
 
    public function logout(){
       $this->session->sess_destroy();  
-      redirect('admin/signin');  
+      redirect('admin/');  
    }
 
    public function signUpPage()
@@ -258,7 +271,7 @@ class Admin extends CI_Controller
       $this->load->view('admin/signup');
    }
 
-   public function dashboardPage()
+   public function dashboard()
    {
 
       $this->checkSession();
@@ -271,33 +284,50 @@ class Admin extends CI_Controller
       $this->load->view('admin/dashboard');
    }
 
-   public function createUserPage()
+   public function create_user()
    {
          $this->checkSession();
 
          $this->load->view('admin/create_user');
    }
 
+   public function create_new_employee()
+   {
+         $this->checkSession();
+
+         $this->load->view('admin/new_employee');
+   }
+
+   public function getLgaByState(){
+      $stateID = $this->input->get('state_id');
+     
+      # Get lgas by state ID
+      $lgas = $this->db->select('*')->from('lgas')->where('state_id', $stateID)->get();
+ 
+      echo '<option value="">--Select Local Government--</option>';
+      
+      foreach ($lgas->result_array() as $lga) {
+          echo '<option value="'.$lga['id'].'">'.$lga['name'].'</option>';
+      }
+      return;
+   }
+
    public function createUser(){
 
       
       
-      $phone = $this->input->post('phone');
-      $name = $this->input->post('name');
+     
       $email = $this->input->post('email');
       $password = $this->input->post('password');
       $con_password = $this->input->post('confirm_password');
 
       if($password == $con_password){
-         if(!empty($phone) && !empty($name) && !empty($email) ){
+         if(!empty($email) ){
 
             $model = $this->ci->Crud->get_instance();
             $model->id = null;
-            $model->mobile = $phone;
             $model->email = $email;
             $model->password = $password;
-            $model->name = $name;
-            $model->userid = $phone."@afriquepay.com";
             $res = $model->getdata("email",$email);
             // $this->output
             //    ->set_content_type('application/json')
@@ -308,11 +338,6 @@ class Admin extends CI_Controller
                $this->output
                ->set_content_type('application/json')
                ->set_output(json_encode(['message'=>"Email already Exist"]));
-            
-            }elseif($model->getdata("mobile",$phone)){
-               $this->output
-               ->set_content_type('application/json')
-               ->set_output(json_encode(['message'=>"Phone number already exist"]));
             }else{
                $model->save();
                $this->output
@@ -332,16 +357,25 @@ class Admin extends CI_Controller
 
    }
 
-   public function manageUserPage()
+   public function list_users()
    {
          $this->checkSession();
-         $alluser = $this->db->select('*')->from('usertbl')->get();
+         $alluser = $this->db->select('*')->from('user')->get();
 
          $data['all_user'] = $alluser->result_array();
          $this->load->view('admin/manageuser',$data);
    }
 
-   public function editUserPage()
+   public function list_borrowers()
+   {
+         $this->checkSession();
+         $alluser = $this->db->select('*')->from('user')->get();
+
+         $data['all_user'] = $alluser->result_array();
+         $this->load->view('admin/list-borrowers',$data);
+   }
+
+   public function edit_customer()
    {
          $this->checkSession();
          $id = $this->uri->segment('3');
@@ -361,20 +395,22 @@ class Admin extends CI_Controller
       $this->load->view('admin/fund_user');
    }
 
-   public function updateUser(){
+   public function update_user(){
       $mobile = $this->input->post('mobile');
-      $name = $this->input->post('name');
+      $firstname = $this->input->post('firstname');
+      $lastname = $this->input->post('lastname');
+      $user_id = $this->input->post('userid');
       $email = $this->input->post('email');
       $id = $this->input->post('id');
-      $userid = $mobile."@afriquepay.com";
       $data = array(
-         'mobile' => $mobile,
-         'name'   => $name,
+         'firstname' => $firstname,
+         'lastname'   => $lastname,
          'email'  => $email,
-         'userid' => $userid
+         'phone'  => $mobile,
+         'user_id' => $user_id
       );
       $model = $this->ci->Crud->get_instance();
-      $feedback = $model->UpdateData("usertbl",$id,$data);
+      $feedback = $model->UpdateData("user",$id,$data);
       if($feedback){
          $this->output
          ->set_content_type('application/json')
@@ -437,7 +473,7 @@ class Admin extends CI_Controller
 
    public function checkSession(){
       if(!$this->session->userdata('username')){
-         redirect('admin/signin');
+         redirect('admin/');
       }
    }
 

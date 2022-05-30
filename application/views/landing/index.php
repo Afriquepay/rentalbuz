@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bankio - HTML Template</title>
+    <title>Rentalbuz</title>
 
     <?php include("homereusables/style.php"); ?>
 </head>
@@ -33,13 +33,13 @@
                         <div class="col-lg-7 col-md-10">
                             <div class="main-content">
                                 <div class="top-area section-text justify-content-center">
-                                    <h4 class="sub-title">Simple. Transparent. Secure</h4>
-                                    <h1 class="title">Banking Solutions</h1>
-                                    <p class="xlr">Products and services designed to help you reach your financial goals.</p>
+                                    <h4 class="sub-title">Rentalbuz</h4>
+                                    <h1 class="title">We give loans to pay for your Rentage </h1>
+                                    <p class="xlr">Helping tenants and occupants pay their rent at due time</p>
                                 </div>
                                 <div class="bottom-area">
-                                    <a href="register.html" class="cmn-btn">Open Account</a>
-                                    <a href="contact.html" class="cmn-btn second">Get in touch</a>
+                                    <a href="register" class="cmn-btn">Open Account</a>
+                                    <a href="contact" class="cmn-btn second">Get in touch</a>
                                 </div>
                             </div>
                         </div>
@@ -101,32 +101,36 @@
                     <div class="col-lg-6">
                         <div class="top-section">
                             <span class="head-icon d-flex justify-content-center align-items-center">
-                                <img src="assets/images/icon/notification.png" alt="icon">
+                                <img src="<?=base_url();?>uploads/assets/images/icon/notification.png" alt="icon">
                             </span>
-                            <h5 class="sub-title">Smart Banking</h5>
+                            <h5 class="sub-title">Smart processing</h5>
                             <h2 class="title">Real time Notifications</h2>
-                            <p>Your customer stay informed in real time with everything that’s happening on his account:
-                                payments, transfer, advice. Get visibility on your customers' flows to anticipate their
-                                needs.</p>
+                            <p>Are you worried to know when your loan is approved or when there is any information for you from us? Dont worry we got you covered as we notify you through your email,sms and even calls</p>
                             <ul class="list">
                                 <li class="list-item d-flex align-items-center">
                                     <span class="check d-flex align-items-center justify-content-center">
-                                        <img src="assets/images/icon/check.png" alt="icon">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                     </span>
-                                    <span>Cards that work all across the world.</span>
+                                    <span>Email Notification</span>
                                 </li>
                                 <li class="list-item d-flex align-items-center ">
                                     <span class="check d-flex align-items-center justify-content-center">
-                                        <img src="assets/images/icon/check.png" alt="icon">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                     </span>
-                                    <span>No ATM fees. No minimum balance. No overdrafts.</span>
+                                    <span>SMS Notification</span>
+                                </li>
+                                <li class="list-item d-flex align-items-center ">
+                                    <span class="check d-flex align-items-center justify-content-center">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
+                                    </span>
+                                    <span>One to One call with us</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 text-end">
                         <div class="img-area">
-                            <img src="assets/images/feature-item-1.png" alt="image">
+                            <img src="<?=base_url();?>uploads/assets/images/feature-item-1.png" alt="image">
                         </div>
                     </div>
                 </div>
@@ -142,31 +146,36 @@
                 <div class="row">
                     <div class="col-lg-6 text-start cus-ord">
                         <div class="img-area">
-                            <img src="assets/images/feature-item-2.png" alt="image">
+                            <img src="<?=base_url();?>uploads/assets/images/feature-item-2.png" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="top-section">
                             <span class="head-icon d-flex justify-content-center align-items-center">
-                                <img src="assets/images/icon/sheled.png" alt="icon">
+                                <img src="<?=base_url();?>uploads/assets/images/icon/sheled.png" alt="icon">
                             </span>
-                            <h5 class="sub-title">Safe Investments</h5>
-                            <h2 class="title">The Better Way to Save & Invest</h2>
-                            <p>Bankio helps over 2 million customers achieve their financial goals by helping them save
-                                and invest with ease. Put that extra cash to use without putting it at risk with Bankio.
+                            <h5 class="sub-title">We Pay For You</h5>
+                            <h2 class="title">Minimal Interest Rate</h2>
+                            <p>We take care of all the transactions involve in getting your desired space as long as you provide us with the right information
                             </p>
                             <ul class="list">
                                 <li class="list-item d-flex align-items-center">
                                     <span class="check d-flex align-items-center justify-content-center">
-                                        <img src="assets/images/icon/check.png" alt="icon">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                     </span>
-                                    <span>Profitable to invest and Handy to manage</span>
+                                    <span>Happy Customer</span>
                                 </li>
                                 <li class="list-item d-flex align-items-center ">
                                     <span class="check d-flex align-items-center justify-content-center">
-                                        <img src="assets/images/icon/check.png" alt="icon">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                     </span>
-                                    <span>Highest Returns on your investments</span>
+                                    <span>Decent and Transparent Deal</span>
+                                </li>
+                                <li class="list-item d-flex align-items-center ">
+                                    <span class="check d-flex align-items-center justify-content-center">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
+                                    </span>
+                                    <span>Sweet Interest Rate</span>
                                 </li>
                             </ul>
                         </div>
@@ -184,55 +193,67 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Open your account from anywhere in the world</h5>
-                            <h2 class="title">Solutions for Every Business Need.</h2>
-                            <p>Power up your business with a full-stack online bank account that fits your needs.</p>
+                            <h5 class="sub-title">We make the world an Easier Place to be</h5>
+                            <h2 class="title">Rentalbuz Solutions </h2>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="row cus-mar">
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="single-box text-center">
                             <div class="thumb d-flex justify-content-center align-items-center">
-                                <img src="assets/images/icon/checking.png" alt="checking">
+                                <img src="<?=base_url();?>uploads/assets/images/icon/user.png" alt="checking">
                             </div>
                             <div class="content">
-                                <h5>Checking Account</h5>
-                                <p>Choose from our checking options that allow you to earn interest, avoid fees, and
-                                    easily
-                                    manage your account.</p>
+                                <h5>Create Account</h5>
+                                <p>Create account easily with us and apply for your loans</p>
                                 <a href="register.html" class="btn-arrow">Open Account
-                                    <img src="assets/images/icon/arrow-right.png" alt="arrow">
+                                    <img src="<?=base_url();?>uploads/assets/images/icon/arrow-right.png" alt="arrow">
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="single-box text-center">
                             <div class="thumb d-flex justify-content-center align-items-center">
-                                <img src="assets/images/icon/savings.png" alt="checking">
+                                <img src="<?=base_url();?>uploads/assets/images/icon/checking.png" alt="checking">
+                            </div>
+                            <div class="content">
+                                <h5>Onboarding Agents</h5>
+                                <p>We accept diffrent agency network from diffrent State</p>
+                                <a href="javascript:void(0)" class="btn-arrow">Coming Soon
+                                    <!-- <img src="assets/images/icon/arrow-right.png" alt="arrow"> -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-box text-center">
+                            <div class="thumb d-flex justify-content-center align-items-center">
+                                <img src="<?=base_url();?>uploads/assets/images/icon/savings.png" alt="checking">
                             </div>
                             <div class="content">
                                 <h5>Savings Accounts</h5>
                                 <p>Save for your goals and watch your money grow with a CD, a money market account, a
                                     savings account.Your future starts now.</p>
                                 <a href="register.html" class="btn-arrow">Start Saving
-                                    <img src="assets/images/icon/arrow-right.png" alt="arrow">
+                                    <img src="<?=base_url();?>uploads/assets/images/icon/arrow-right.png" alt="arrow">
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="single-box text-center">
                             <div class="thumb d-flex justify-content-center align-items-center">
-                                <img src="assets/images/icon/business.png" alt="checking">
+                                <img src="<?=base_url();?>uploads/assets/images/icon/business.png" alt="checking">
                             </div>
                             <div class="content">
                                 <h5>Business Account</h5>
                                 <p>Take charge of your business banking with a business bank account. Services including
                                     virtual cards, team management and more.</p>
                                 <a href="register.html" class="btn-arrow">Open Account
-                                    <img src="assets/images/icon/arrow-right.png" alt="arrow">
+                                    <img src="<?=base_url();?>uploads/assets/images/icon/arrow-right.png" alt="arrow">
                                 </a>
                             </div>
                         </div>
@@ -251,35 +272,33 @@
                     <div class="col-lg-6">
                         <div class="top-section">
                             <span class="head-icon d-flex justify-content-center align-items-center">
-                                <img src="assets/images/icon/sheled.png" alt="icon">
+                                <img src="<?=base_url();?>uploads/assets/images/icon/sheled.png" alt="icon">
                             </span>
-                            <h5 class="sub-title">Banking at Your Fingertips</h5>
-                            <h2 class="title">Your banking experience anytime, anywhere</h2>
-                            <p>Get your money moving with our simple to use, accessible mobile app. As good as a bank
-                                branch within your phone!</p>
+                            <h5 class="sub-title">User Dashboard</h5>
+                            <h2 class="title">We have a structured dashboard for easy access and allow our users manage their activities and processes</p>
                             <ul class="list">
                                 <li class="list-item d-flex align-items-center">
                                     <span class="check d-flex align-items-center justify-content-center">
-                                        <img src="assets/images/icon/check.png" alt="icon">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                     </span>
                                     <span>Bill Payments ,Funds Transfer ,QR payments</span>
                                 </li>
                                 <li class="list-item d-flex align-items-center ">
                                     <span class="check d-flex align-items-center justify-content-center">
-                                        <img src="assets/images/icon/check.png" alt="icon">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                     </span>
                                     <span>Credit card payments and Order food</span>
                                 </li>
                             </ul>
                         </div>
                         <div class="button-group d-flex align-items-center flex-wrap">
-                            <a href="javascript:void(0)"><img src="assets/images/google-play.png" alt="image"></a>
-                            <a href="javascript:void(0)"><img src="assets/images/app-store.png" alt="image"></a>
+                            <a href="javascript:void(0)"><img src="<?=base_url();?>uploads/assets/images/google-play.png" alt="image"></a>
+                            <a href="javascript:void(0)"><img src="<?=base_url();?>uploads/assets/images/app-store.png" alt="image"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-end">
                         <div class="img-area">
-                            <img class="max-un" src="assets/images/apps.png" alt="image">
+                            <img class="max-un" src="<?=base_url();?>uploads/assets/images/apps.png" alt="image">
                         </div>
                     </div>
                 </div>
@@ -307,7 +326,7 @@
                             <div class="card-carousel-index">
                                 <div class="single">
                                     <div class="thumb">
-                                        <img src="assets/images/card-img-1.png" alt="image">
+                                        <img src="<?=base_url();?>uploads/assets/images/card-img-1.png" alt="image">
                                     </div>
                                     <div class="button-area text-center">
                                         <a href="register.html" class="cmn-btn">Get Started Now</a>
@@ -315,7 +334,7 @@
                                 </div>
                                 <div class="single">
                                     <div class="thumb">
-                                        <img src="assets/images/card-img-2.png" alt="image">
+                                        <img src="<?=base_url();?>uploads/assets/images/card-img-2.png" alt="image">
                                     </div>
                                     <div class="button-area text-center">
                                         <a href="register.html" class="cmn-btn">Get Started Now</a>
@@ -323,7 +342,7 @@
                                 </div>
                                 <div class="single">
                                     <div class="thumb">
-                                        <img src="assets/images/card-img-1.png" alt="image">
+                                        <img src="<?=base_url();?>uploads/assets/images/card-img-1.png" alt="image">
                                     </div>
                                     <div class="button-area text-center">
                                         <a href="register.html" class="cmn-btn">Get Started Now</a>
@@ -331,7 +350,7 @@
                                 </div>
                                 <div class="single">
                                     <div class="thumb">
-                                        <img src="assets/images/card-img-2.png" alt="image">
+                                        <img src="<?=base_url();?>uploads/assets/images/card-img-2.png" alt="image">
                                     </div>
                                     <div class="button-area text-center">
                                         <a href="register.html" class="cmn-btn">Get Started Now</a>
@@ -360,8 +379,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-1.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-11.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-1.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-11.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Secured Cards</h5>
@@ -371,8 +390,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-2.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-22.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-2.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-22.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Balance Transfer</h5>
@@ -382,8 +401,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-3.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-33.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-3.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-33.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Travel</h5>
@@ -393,8 +412,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-4.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-44.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-4.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-44.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Cashback</h5>
@@ -408,8 +427,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-1.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-11.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-1.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-11.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Secured Cards</h5>
@@ -419,8 +438,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-2.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-22.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-2.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-22.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Balance Transfer</h5>
@@ -430,8 +449,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-3.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-33.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-3.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-33.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Travel</h5>
@@ -441,8 +460,8 @@
                                     <div class="col-md-6">
                                         <div class="single-box text-center">
                                             <div class="thumb">
-                                                <img src="assets/images/icon/tab-card-4.png" alt="icon" class="active">
-                                                <img src="assets/images/icon/tab-card-44.png" alt="icon" class="alt">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-4.png" alt="icon" class="active">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/tab-card-44.png" alt="icon" class="alt">
                                             </div>
                                             <a href="javascript:void(0)">
                                                 <h5>Cashback</h5>
@@ -500,22 +519,22 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="plan-box">
                                     <div class="thumb">
-                                        <img src="assets/images/icon/loan-1.png" alt="icon" class="active">
-                                        <img src="assets/images/icon/loan-11.png" alt="icon" class="alt">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/loan-1.png" alt="icon" class="active">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/loan-11.png" alt="icon" class="alt">
                                     </div>
                                     <a href="home-loan.html">
-                                        <h5>Home Loans</h5>
+                                        <h5>House Loans</h5>
                                     </a>
                                     <ul class="list">
                                         <li class="list-item d-flex align-items-center">
                                             <span class="check d-flex align-items-center justify-content-center">
-                                                <img src="assets/images/icon/check.png" alt="icon">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                             </span>
                                             <span>Lowest interest rates</span>
                                         </li>
                                         <li class="list-item d-flex align-items-center">
                                             <span class="check d-flex align-items-center justify-content-center">
-                                                <img src="assets/images/icon/check.png" alt="icon">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                             </span>
                                             <span>Fast Loan Processing</span>
                                         </li>
@@ -525,11 +544,11 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="plan-box">
                                     <div class="thumb">
-                                        <img src="assets/images/icon/loan-2.png" alt="icon" class="active">
-                                        <img src="assets/images/icon/loan-22.png" alt="icon" class="alt">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/loan-2.png" alt="icon" class="active">
+                                        <img src="<?=base_url();?>uploads/assets/images/icon/loan-22.png" alt="icon" class="alt">
                                     </div>
                                     <a href="car-loan.html">
-                                        <h5>Car Loans</h5>
+                                        <h5>Shop Loans</h5>
                                     </a>
                                     <ul class="list">
                                         <li class="list-item d-flex align-items-center">
@@ -540,14 +559,14 @@
                                         </li>
                                         <li class="list-item d-flex align-items-center">
                                             <span class="check d-flex align-items-center justify-content-center">
-                                                <img src="assets/images/icon/check.png" alt="icon">
+                                                <img src="<?=base_url();?>uploads/assets/images/icon/check.png" alt="icon">
                                             </span>
                                             <span>Quick Easy</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <!-- <div class="col-md-6 col-sm-6">
                                 <div class="plan-box">
                                     <div class="thumb">
                                         <img src="assets/images/icon/loan-3.png" alt="icon" class="active">
@@ -596,7 +615,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

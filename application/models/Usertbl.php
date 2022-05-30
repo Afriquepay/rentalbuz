@@ -1,7 +1,7 @@
 <?php
 class Usertbl extends CI_model{
  
- public $id,$userid  ,$name  ,$mobile  ,$email   ,$fakepassword  ,$password  ,$pin   ,$walletamount  ,$refername   ,$profilepixurl   ,$date  ;
+ public $id,$userid ,$mobile  ,$email   ,$fakepassword  ,$password  ,$pin   ,$walletamount  ,$refername   ,$profilepixurl   ,$date  ;
 
 
  
@@ -16,7 +16,7 @@ class Usertbl extends CI_model{
     {
         $insert = $this
             ->db
-            ->insert('usertbl', $this);
+            ->insert('user', $this);
         return $this
             ->db
             ->insert_id();
@@ -30,7 +30,7 @@ class Usertbl extends CI_model{
 public function getuserdetail($id){
 
   $this->db->select('*');
-  $this->db->from('usertbl');
+  $this->db->from('user');
  $this->db->where("id= '".$id."'");
  //$this->db->where('password',$user['password']);
  

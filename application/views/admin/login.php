@@ -76,7 +76,7 @@ formElem.addEventListener('submit',  (e) => {
   crt.innerHTML = "<li class='fa fa-spinner fa-spin'></li>Authenticating...";
 	setTimeout(async () => {
 		const formm = new FormData(formElem);
-		let response = await fetch('admin/processlogin', {
+		let response = await fetch('processlogin', {
 			method: 'POST',
 			body: new FormData(formElem)
 		  });
@@ -84,7 +84,7 @@ formElem.addEventListener('submit',  (e) => {
 		  let result = await response.json();
 	  
 		  if(result.message == "yes"){
-			  window.location = "admin/dashboard";
+			  window.location = "dashboard";
 		  }else{
 			$(function(){
 				new PNotify({

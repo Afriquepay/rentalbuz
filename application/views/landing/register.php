@@ -20,23 +20,24 @@
     <a href="javascript:void(0)" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
     <!-- Scroll To Top End -->
 
-    <!-- header-section start -->
+  <!-- header-section start -->
   <?php include("homereusables/headernav.php"); ?>
     <!-- header-section end -->
 
-    <!-- Login In start -->
-    <section class="sign-in-up login">
+    <!-- Register In start -->
+    <section class="sign-in-up register">
         <div class="overlay pt-120 pb-120">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-content">
                             <div class="section-header">
-                                <h5 class="sub-title">The Power of Financial Freedom</h5>
-                                <h2 class="title">Set Up Your Password</h2>
-                                <p>Your security is our top priority. You'll need this to log into your rentalbuz account</p>
+                                <h5 class="sub-title">Rentalbuz make the world easier</h5>
+                                <h2 class="title">Let’s Get Started!</h2>
+                                <p>Please Enter your Email Address to Start your Online Application</p>
                             </div>
                             <form action="#">
+                               
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="single-input">
@@ -45,20 +46,22 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="single-input ">
-                                            <label for="confirmPass">Confirm Password</label>
-                                            <div class="password-show d-flex align-items-center">
-                                                <input type="text" class="passInput" id="confirmPass" autocomplete="off" placeholder="Enter Your Password">
-                                                <img class="showPass" src="<?=base_url();?>uploads/assets/images/icon/show-hide.png" alt="icon">
-                                            </div>
-                                            <div class="forgot-area text-end">
-                                                <a href="javascript:void(0)" class="forgot-password">Forgot Password?</a>
-                                            </div>
+                                        <div class="single-input">
+                                            <label for="referral">Password</label>
+                                            <input type="text" id="referral" placeholder="Enter the referral code">
+                                        </div>
+                                    </div>
+                                    <div class="forgot-area text-end">
+                                                <a href="login" class="forgot-password">Login</a>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="single-input">
+                                            <p>By clicking submit, you agree to <span>Rentalbuz's Terms of Use, Privacy Policy, E-sign</span> & <span>communication Authorization.</span></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="btn-area">
-                                    <button class="cmn-btn">Login</button>
+                                    <button class="cmn-btn">Submit Now</button>
                                 </div>
                             </form>
                         </div>
@@ -67,7 +70,7 @@
             </div>
         </div>
     </section>
-    <!-- Login In end -->
+    <!-- Register In end -->
 
     <!--==================================================================-->
     <?php include("homereusables/scripts.php"); ?>

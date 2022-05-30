@@ -28,14 +28,9 @@
                     </a>
                     <ul class="nav nav-children">
                        
+                        
                         <li>
                             <a class="nav-link" href="<?=base_url()?>admin/list_borrowers">
-                                <i class="bx bx-radio-circle" aria-hidden="true"></i>
-                                New Borrowers
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="<?=base_url()?>admin/create-user">
                                 <i class="bx bx-radio-circle" aria-hidden="true"></i>
                                 List Borrowers
                             </a>
@@ -60,7 +55,7 @@
                     <ul class="nav nav-children">
                        
                         <li>
-                            <a class="nav-link" href="<?=base_url()?>admin/list_borrowers">
+                            <a class="nav-link" href="<?=base_url()?>admin/new_loan">
                                 <i class="bx bx-radio-circle" aria-hidden="true"></i>
                                 New Loans
                             </a>
@@ -111,7 +106,7 @@
                     <ul class="nav nav-children">
                        
                         <li>
-                            <a class="nav-link" href="<?=base_url()?>admin/list_borrowers">
+                            <a class="nav-link" href="<?=base_url()?>admin/create_new_employee">
                                 <i class="bx bx-radio-circle" aria-hidden="true"></i>
                                 New Employee
                             </a>
@@ -136,13 +131,21 @@
                     <ul class="nav nav-children">
                        
                         <li>
-                            <a class="nav-link" href="<?=base_url()?>admin/list_borrowers">
+                            <a class="nav-link" href="<?=base_url()?>admin/create_user">
                                 <i class="bx bx-radio-circle" aria-hidden="true"></i>
-                               Customers
+                               New Customer
                             </a>
                         </li>
+
                         <li>
-                            <a class="nav-link" href="<?=base_url()?>admin/create-user">
+                            <a class="nav-link" href="<?=base_url()?>admin/list_users">
+                                <i class="bx bx-radio-circle" aria-hidden="true"></i>
+                               List Customers
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="nav-link" href="<?=base_url()?>admin/all_transaction">
                                 <i class="bx bx-radio-circle" aria-hidden="true"></i>
                                 All Transactions
                             </a>
@@ -161,7 +164,7 @@
                 </li>
 
 
-
+<!-- 
                 <li class="nav-parent">
                     <a class="nav-link" href="#">
                         <i class="bx bx-user" aria-hidden="true"></i>
@@ -263,7 +266,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </nav>
 

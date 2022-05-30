@@ -1,7 +1,7 @@
 <?php
 class Crud extends CI_model{
  
- public $id ,  $password  ,  $name  , $mobile  , $email, $userid ;
+ public $id ,  $password  , $email;
 
  
  
@@ -12,7 +12,7 @@ class Crud extends CI_model{
     {
         $insert = $this
             ->db
-            ->insert('usertbl', $this);
+            ->insert('user', $this);
         return $this
             ->db
             ->insert_id();
@@ -29,7 +29,7 @@ class Crud extends CI_model{
 public function getdata($value, $string){
 
   $this->db->select('*');
-  $this->db->from('usertbl');
+  $this->db->from('user');
  $this->db->where($value."='".$string."'");
  
   if($query=$this->db->get())

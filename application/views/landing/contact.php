@@ -1,267 +1,403 @@
 <!doctype html>
- <html class="landing simple-sticky-header-enabled">
- <?php include("homereusables/head.php"); ?>
+<html class="no-js" lang="en">
 
- <body  class="alternative-font-4 loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 100}">
-		<div class="loading-overlay">
-			<div class="bounce-loader">
-				<div class="bounce1"></div>
-				<div class="bounce2"></div>
-				<div class="bounce3"></div>
-			</div>
-		</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rentalbuz|Contact</title>
 
-		<div class="body">
-			<header id="header" class="header header-nav-links header-nav-menu " data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': false, 'stickyEnableOnMobile': true, 'stickyStartAt': 70, 'stickyChangeLogo': false, 'stickyHeaderContainerHeight': 70}">
-				<div class="header-body border-top-0 bg-dark box-shadow-none">
-					<div class="header-container container h-100">
-						<div class="header-row h-100">
-							<div class="header-column">
-								<div class="header-row">
-									<div class="header-logo">
-										<a href="#" class="goto-top"><img alt="Porto" width="102" height="45" data-sticky-width="82" data-sticky-height="36" data-sticky-top="0" src="<?=base_url();?>uploads/img/lazy.png" data-plugin-lazyload data-plugin-options="{'threshold': 500}" data-original="#"></a>
-									</div>
-								</div>
-							</div>
-							<div class="header-column justify-content-end">
-								<div class="header-row">
-									<button class="btn header-btn-collapse-nav d-lg-none order-3 mt-0 ms-3 me-0" data-bs-toggle="collapse" data-bs-target=".header-nav">
-										<i class="fas fa-bars"></i>
-									</button>
-									<!-- start: header nav menu -->
-									<?php include("homereusables/headernav.php"); ?>
-								</div>
-							</div>
-						</div> 
+    <link rel="shortcut icon" href="<?=base_url();?>uploads/assets/images/rentalbuz.png" type="image/x-icon">
+    <?php include("homereusables/style.php"); ?>
+</head>
 
-					</div>
-				</div>
-			</header>
-            
-            <style> 
-    
-    div.back {
-        background-image:url('<?=base_url();?>uploads/img/landing/contact.png');
+<body>
+    <!-- start preloader -->
+    <div class="preloader" id="preloader"></div>
+    <!-- end preloader -->
 
-    }
-    .jumbotron{
-    background-color:#0088CC;
-    text-align:center;
-    border-radius:10%;
-}
-.carousel-item {
-  height: 123vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-        </style>
+    <!-- Scroll To Top Start-->
+    <a href="javascript:void(0)" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
+    <!-- Scroll To Top End -->
 
-	<div role="main" class="main pt-5 mt-lg-5">
-        <div class="container">
-            <div class="row">
-            <div class="jumbotron jumbotron-fluid">
-                
-                <h2 class="display-4 text-center text-white">Reach Us Today</h2>
-                <p class="lead text-center text-white"> There's always an Outlet Assistant eager to help you. </p>
-                
+     <!-- header-section start -->
+     <?php include("homereusables/headernav.php"); ?>
+    <!-- header-section end -->
+
+    <!-- banner-section start -->
+    <section class="banner-section inner-banner contact">
+        <div class="overlay">
+            <div class="banner-content d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-7 col-md-10">
+                            <div class="main-content">
+                                <h1>Contact Us</h1>
+                                <div class="breadcrumb-area">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb d-flex align-items-center">
+                                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <section class="container pt-5 mt-lg-5">
-			<div class="row">
-                <div class="col-sm-6">
-                <!-- <header> -->
+    </section>
+    <!-- banner-section end -->
 
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" style="background-image: url('<?=base_url();?>uploads/img/landing/homepage3.png')">
-      <div class="carousel-caption">
-        <!-- <h3 class = "" style = "color:#0088CC">jjkjkejjekjjjjk</h3>
-        <p > kjjkdjkejkj</p> -->
-      </div>
-    </div>
-    <div class="carousel-item" style="background-image: url('<?=base_url();?>uploads/img/landing/envelope.png')">
-      <div class="carousel-caption">
-        <!-- <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p> -->
-      </div>
-    </div>
-    <div class="carousel-item" style="background-image: url('<?=base_url();?>uploads/img/landing/escrow.png')">
-      <div class="carousel-caption">
-        <!-- <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p> -->
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<!-- </header> -->
+    <!-- Apply for a loan In start -->
+    <section class="apply-for-loan contact">
+        <div class="overlay pt-120 pb-120">
+            <div class="container wow fadeInUp">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-header text-center">
+                            <h2 class="title">Get in touch with us.</h2>
+                            <p>Fill up the form and our team will get back to you within 24 hours</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                <section class="body-sign">
-			<div class="center-sign">
-				<!-- <a href="/" class="logo float-left">
-					<img src="<?=base_url();?>uploads/img/logo.png" height="70" alt="Porto Admin" />
-				</a> -->
-
-				<div class="panel card-sign">
-					<div class="card-title-sign mt-3 ">
-						<h4 class=" m-0">Leave a message</h4>
-                        <p>Tell us your request, complain or enquiries. We'll reach out to you as soon as possible.</p>
-					</div>
-					<div class="card-body">
-						<form action="index.html" method="post">
-							<div class="form-group mb-3">
-								<label>Tell us your name</label>
-								<div class="input-group">
-									<input name="username" type="text" class="form-control form-control-lg" />
-									<!-- <span class="input-group-text">
-										<i class="bx bx-user text-4"></i>
-									</span> -->
-								</div>
-							</div>
-
-							<div class="form-group mb-3">
-								<div class="clearfix">
-									<label class="float-left">Provide your email Address</label>
-									<!-- <a href="#" class="float-end">Lost Password?</a> -->
-								</div>
-								<div class="input-group">
-									<input name="pwd" type="email" class="form-control form-control-lg" />
-									<!-- <span class="input-group-text">
-										<i class="bx bx-lock text-4"></i>
-									</span> -->
-								</div>
-                                
-							</div>
-                            <div class="form-group mb-3">
-								<div class="clearfix">
-									<label class="float-left">Message Subect</label>
-									<!-- <a href="#" class="float-end">Lost Password?</a> -->
-								</div>
-								<div class="input-group">
-									<input name="pwd" type="text" class="form-control form-control-lg" />
-									<!-- <span class="input-group-text">
-										<i class="bx bx-lock text-4"></i>
-									</span> -->
-								</div>
-                                
-							</div>
-
-                            <div class="form-group mb-3">
-								<div class="clearfix">
-									<label class="float-left">Type your message</label>
-									<!-- <a href="#" class="float-end">Lost Password?</a> -->
-								</div>
-								<div class="input-group">
-									<textarea name="" class = "form-control" id="" cols="20" rows="5"></textarea>
-								</div>
-                                
-							</div>
-
-							<!-- <div class="row">
-								<div class="col-sm-8">
-									<div class="checkbox-custom checkbox-default">
-										<input id="RememberMe" name="rememberme" type="checkbox"/>
-										<label for="RememberMe">Remember Me</label>
-									</div>
-								</div>
-								<div class="col-sm-4 text-end">
-									<button type="submit" class="btn btn-primary mt-2">Sign In</button>
-								</div>
-							</div> -->
-
-							<!-- <span class="mt-3 mb-3 line-thru text-center text-uppercase">
-								<span>or</span>
-							</span> -->
-
-							<!-- <div class="mb-1 text-center">
-								<a class="btn btn-facebook mb-3 ms-1 me-1" href="#">Connect with <i class="fab fa-facebook-f"></i></a>
-								<a class="btn btn-twitter mb-3 ms-1 me-1" href="#">Connect with <i class="fab fa-twitter"></i></a>
-							</div> -->
-
-							<p class="text-center"><a href="#">Click here to view privacy policy?</a></p>
-                            <div class="col-sm-4 text-end">
-									<button type="submit" class="btn btn-primary mt-2">Send Now</button>
-                            </div>
-
-						</form>
-					</div>
-				</div>
-
-				<p class="text-center text-muted mt-3 mb-3">&copy; Copyright 2021. All Rights Reserved.</p>
-			</div>
-		</section>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="form-content">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="name">Name</label>
+                                            <input type="text" id="name" placeholder="What's your name?">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="email">Email</label>
+                                            <input type="text" id="email" placeholder="What's your email?">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="phone">Phone</label>
+                                            <input type="text" id="phone" placeholder="(123) 480 - 3540">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="single-input">
+                                            <label for="loan">Service interested in</label>
+                                            <input type="text" id="loan" placeholder="Ex. Auto Loan, Home Loan">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="single-input">
+                                            <label for="message">Message</label>
+                                            <textarea id="message" placeholder="I would like to get in touch with you..." cols="30" rows="10"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-area text-center">
+                                    <button class="cmn-btn">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-		<!-- end: page -->
-        </section>
+        </div>
+    </section>
+    <!-- Apply for a loan In end -->
+
+    <!-- Need more help In start -->
+    <section class="account-feature loan-feature need-more-help">
+        <div class="overlay pt-120 pb-120">
+            <div class="container wow fadeInUp">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-header text-center">
+                            <h5 class="sub-title">You can reach out to us for all your</h5>
+                            <h2 class="title">Need More Help?</h2>
+                            <p>Queries, complaints and feedback. We will be happy to serve you</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cus-mar">
+                    <div class="col-md-4">
+                        <div class="single-box">
+                            <div class="icon-box">
+                                <img src="assets/images/icon/need-help-1.png" alt="icon">
+                            </div>
+                            <h5>Sales</h5>
+                            <p>sales@bankio.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-box">
+                            <div class="icon-box">
+                                <img src="assets/images/icon/need-help-2.png" alt="icon">
+                            </div>
+                            <h5>Help & Support</h5>
+                            <p>supports@bankio.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-box">
+                            <div class="icon-box">
+                                <img src="assets/images/icon/need-help-3.png" alt="icon">
+                            </div>
+                            <h5>Media & Press</h5>
+                            <p>media@bankio.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Need more help In end -->
+
+    <!-- FAQs In start -->
+    <section class="faqs-section account">
+        <div class="overlay pt-120 pb-120">
+            <div class="container wow fadeInUp">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-header text-center">
+                            <h5 class="sub-title">If you have question,we have answer</h5>
+                            <h2 class="title">Frequently asked questions</h2>
+                            <p>Get answers to all questions you have and boost your knowledge so you can save, invest
+                                and spend smarter. <a href="faqs.html">See all questions here!</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="faq-box wow fadeInUp">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            How do I locate the nearesty branch or ATM?
+                                        </button>
+                                    </h5>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>If your card is missing, let us know immediately. We’ll block your card
+                                                right away send over a new one on the same day.To report a lost or
+                                                stolen card, call us at (406) 555-0120.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            What do I do if I lose my card or it gets stolen?
+                                        </button>
+                                    </h5>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>If your card is missing, let us know immediately. We’ll block your card
+                                                right away send over a new one on the same day.To report a lost or
+                                                stolen card, call us at (406) 555-0120.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            What is your customer service number?
+                                        </button>
+                                    </h5>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>If your card is missing, let us know immediately. We’ll block your card
+                                                right away send over a new one on the same day.To report a lost or
+                                                stolen card, call us at (406) 555-0120.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                            aria-expanded="false" aria-controls="collapseFive">
+                                            How do I reset my pin?
+                                        </button>
+                                    </h5>
+                                    <div id="collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>If your card is missing, let us know immediately. We’ll block your card
+                                                right away send over a new one on the same day.To report a lost or
+                                                stolen card, call us at (406) 555-0120.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="headingsix">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapsesix"
+                                            aria-expanded="false" aria-controls="collapsesix">
+                                            What is required to use Digital Banking?
+                                        </button>
+                                    </h5>
+                                    <div id="collapsesix" class="accordion-collapse collapse"
+                                        aria-labelledby="headingsix" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>If your card is missing, let us know immediately. We’ll block your card
+                                                right away send over a new one on the same day.To report a lost or
+                                                stolen card, call us at (406) 555-0120.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header" id="headingsaven">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapsesaven"
+                                            aria-expanded="false" aria-controls="collapsesaven">
+                                            Is digital banking secure?
+                                        </button>
+                                    </h5>
+                                    <div id="collapsesaven" class="accordion-collapse collapse"
+                                        aria-labelledby="headingsaven" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>If your card is missing, let us know immediately. We’ll block your card
+                                                right away send over a new one on the same day.To report a lost or
+                                                stolen card, call us at (406) 555-0120.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQs In end -->
+
+    <!-- Get Start In start -->
+    <section class="get-start wow fadeInUp">
+        <div class="overlay">
+            <div class="container">
+                <div class="col-12">
+                    <div class="get-content">
+                        <div class="section-text">
+                            <h3 class="title">Ready to get started?</h3>
+                            <p>It only takes a few minutes to register your FREE Bankio account.</p>
+                        </div>
+                        <a href="register.html" class="cmn-btn">Open an Account</a>
+                        <img src="assets/images/get-start.png" alt="images">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Get Start In end -->
+
+    <!-- Footer Area Start -->
+    <div class="footer-section">
+        <div class="container pt-120">
+            <div class="row cus-mar pt-120 pb-120 justify-content-between wow fadeInUp">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+                    <div class="footer-box">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo.png" alt="logo">
+                        </a>
+                        <p>A modern, technology-first bank built for you and your growing business.</p>
+                        <div class="social-link d-flex align-items-center">
+                            <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
+                            <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+                            <a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-6">
+                    <div class="footer-box">
+                        <h5>Company</h5>
+                        <ul class="footer-link">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="about.html">Awards</a></li>
+                            <li><a href="career-single.html">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-6">
+                    <div class="footer-box">
+                        <h5>Useful Links</h5>
+                        <ul class="footer-link">
+                            <li><a href="product.html">Products</a></li>
+                            <li><a href="business-loan.html">Business Loan</a></li>
+                            <li><a href="affiliate.html">Affiliate Program</a></li>
+                            <li><a href="blog-list.html">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-6">
+                    <div class="footer-box">
+                        <h5>Support</h5>
+                        <ul class="footer-link">
+                            <li><a href="mailto:support@bankio">Support@bankio</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="faqs.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-8">
+                    <div class="footer-box">
+                        <h5>Subscribe</h5>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Enter Your Email address">
+                                <button class="cmn-btn">Subscribe</button>
+                            </div>
+                        </form>
+                        <p>Get the latest updates via email. Any time you may unsubscribe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <div class="left">
+                            <p> Copyright © <a href="index.html">Bankio</a> | Designed by
+                                <a href="https://themeforest.net/user/pixelaxis">PIXELAXIS</a>
+                            </p>
+                        </div>
+                        <div class="right">
+                            <a href="privacy-policy.html" class="cus-bor">Privacy </a>
+                            <a href="terms-conditions.html">Terms &amp; Condition </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="img-area">
+            <img src="assets/images/footer-Illu-left.png" class="left" alt="Images">
+            <img src="assets/images/footer-Illu-right.png" class="right" alt="Images">
+        </div>
     </div>
+    <!-- Footer Area End -->
 
-<br><br>
+    <!--==================================================================-->
+    <?php include("homereusables/scripts.php"); ?>
+    <script src="assets/js/main.js"></script>
+</body>
 
-<footer id="footer" class="bg-color-dark-scale-5 border border-end-0 border-start-0 border-bottom-0 border-color-light-3 mt-0">
-				<div class="container text-center my-3 py-5">
-					<a href="#" class="goto-top">
-						<img src="<?=base_url();?>uploads/img/lazy.png" data-plugin-lazyload data-plugin-options="{'threshold': 500}" data-original="img/logo-light.png" width="102" height="45" class="mb-4 appear-animation" alt="Porto" data-appear-animation="fadeIn" data-appear-animation-delay="300">
-					</a>
-					<p class="font-weight-500 text-4 ls-0 mb-4">Afriquepay <a href="https://themeforest.net/user/okler/" class="text-color-light" target="_blank">Okler.</a></p>
-					<ul class="social-icons social-icons-big social-icons-dark-2">
-						<li class="social-icons-instagram"><a href="http://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-						<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-						<li class="social-icons-youtube"><a href="http://www.youtube.com/" target="_blank" title="Youtube"><i class="fab fa-youtube"></i></a></li>
-					</ul>
-				</div>
-				<div class="copyright bg-color-dark-scale-4 py-4">
-					<div class="container text-center py-2">
-						<p class="mb-0 text-2 ls-0">Copyright 2014 - 2021 Porto - All Rights Reserved</p>
-					</div>
-				</div>
-			</footer>
-		</div>
-
-		<!-- Vendor -->
-		<script src="<?=base_url();?>uploads/vendor/jquery/jquery.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/popper/umd/popper.min.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/common/common.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/nanoscroller/nanoscroller.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/magnific-popup/jquery.magnific-popup.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-
-		<!-- Specific Page Vendor -->
-		<script src="<?=base_url();?>uploads/vendor/jquery-appear/jquery.appear.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/owl.carousel/owl.carousel.js"></script>
-		<script src="<?=base_url();?>uploads/vendor/jquery.lazyload/jquery.lazyload.js"></script>
-
-		<!-- Theme Base, Components and Settings -->
-		<script src="<?=base_url();?>uploads/js/theme.js"></script>
-
-		<!-- Theme Custom -->
-		<script src="<?=base_url();?>uploads/js/custom.js"></script>
-
-		<!-- Theme Initialization Files -->
-		<script src="<?=base_url();?>uploads/js/theme.init.js"></script>
-
-	</body>
 </html>

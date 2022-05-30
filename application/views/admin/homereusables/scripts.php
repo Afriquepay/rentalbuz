@@ -52,5 +52,5 @@
 				phone: "08140642443" //Visitor phone
 			};
 		</script>
-		<script src="//code.tidio.co/rguhb7iyjezmnjxisje3vimzuj3trbd6.js" async></script>
+		<!-- <script src="//code.tidio.co/rguhb7iyjezmnjxisje3vimzuj3trbd6.js" async></script> -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

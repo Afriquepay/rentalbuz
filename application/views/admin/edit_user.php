@@ -24,22 +24,29 @@
 											<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
 										</div>
 
-										<h2 class="card-title">Edit User</h2>
+										<h2 class="card-title">Edit Customer</h2>
 									</header>
 									<div class="card-body">
 										<form class="form-horizontal form-bordered" method="post" id="updateform">
 											<div class="form-group row pb-4">
-												<label class="col-lg-3 control-label text-lg-end pt-2" for="inputDefault">User Id</label>
+												<label class="col-lg-3 control-label text-lg-end pt-2" for="inputDefault">First Name</label>
 												<div class="col-lg-6">
-													<input type="text" name='userid' class="form-control" id="inputDefault" value="<?php echo $user_details[0]['userid']; ?>" disabled="">
+													<input type="text" name='firstname' class="form-control" id="inputDefault" value="<?php echo $user_details[0]['firstname']; ?>" readonly>
 												</div>
 											</div>
-                                            <div class="form-group row pb-4">
-												<label class="col-lg-3 control-label text-lg-end pt-2" for="inputDefault">Name</label>
+											<div class="form-group row pb-4">
+												<label class="col-lg-3 control-label text-lg-end pt-2" for="inputDefault">Last Name</label>
 												<div class="col-lg-6">
-													<input type="text" name='name' class="form-control" id="inputDefault" value="<?php echo $user_details[0]['name']; ?>" >
+													<input type="text" name='lastname' class="form-control" id="inputDefault" value="<?php echo $user_details[0]['lastname']; ?>" readonly>
 												</div>
 											</div>
+											<div class="form-group row pb-4">
+												<label class="col-lg-3 control-label text-lg-end pt-2" for="inputDefault">Customer Id</label>
+												<div class="col-lg-6">
+													<input type="text" name='userid' class="form-control" id="inputDefault" value="<?php echo $user_details[0]['user_id']; ?>" readonly>
+												</div>
+											</div>
+                                         
                                             <div class="form-group row pb-4">
 												<label class="col-lg-3 control-label text-lg-end pt-2" for="inputDefault">Email</label>
 												<div class="col-lg-6">
@@ -49,7 +56,7 @@
                                             <div class="form-group row pb-4">
 												<label class="col-lg-3 control-label text-lg-end pt-2" for="inputDefault">Phone</label>
 												<div class="col-lg-6">
-													<input type="number" name='mobile' class="form-control" id="inputDefault" value="<?php echo $user_details[0]['mobile']; ?>">
+													<input type="number" name='mobile' class="form-control" id="inputDefault" value="<?php echo $user_details[0]['phone']; ?>">
 												</div>
 											</div>
 											<input type="hidden" name="id" value="<?php echo $user_details[0]['id']; ?>">

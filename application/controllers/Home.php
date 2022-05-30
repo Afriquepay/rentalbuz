@@ -34,6 +34,19 @@ class Home extends CI_Controller
     {
          $this->load->view('landing/faq');
     }
+
+    public function register()
+    {
+         $this->load->view('landing/register');
+    }
+
+    
+    public function login()
+    {
+         $this->load->view('landing/login');
+    }
+
+    
 }
 
 

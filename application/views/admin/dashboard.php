@@ -265,7 +265,7 @@
 												<div class="widget-summary-col widget-summary-col-icon">
 													<div class="summary-icon">
 													<i class="fas fa-arrow-down"></i>
-													</div>
+													</div>	
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
