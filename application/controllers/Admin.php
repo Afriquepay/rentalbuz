@@ -236,8 +236,8 @@ class Admin extends CI_Controller
 
       $user = ['username'=>$username, 'password' => $password];
 
-      if($this->Usertbl->login_user($user)){
-         $result = $this->Usertbl->login_user($user);
+      if($this->Usertbl->login_admin($user)){
+         $result = $this->Usertbl->login_admin($user);
          $data = array(  
             'username' => $result[0]['username'],  
             'id' => $result[0]['id'],
@@ -473,7 +473,7 @@ class Admin extends CI_Controller
 
    public function checkSession(){
       if(!$this->session->userdata('username')){
-         redirect('admin/');
+         redirect('admin');
       }
    }
 

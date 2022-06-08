@@ -1,4 +1,3 @@
-<nav class="navbar fixed-bottom shadow navbar-light bg-light">
   <div class="container-fluid d-flex justify-content-center">
     <ul class="nav nav-tabs nav-justified">
         <li class="active mx-2 bottom-item nav-color">
@@ -53,4 +52,3 @@
         </li>
     </ul> -->
   </div>
-</nav>

@@ -1,80 +1,172 @@
-<!-- start: header -->
 <header class="header">
-    <div class="logo-container">
-        <a href="" class="logo">
-            <img src="<?=base_url();?>uploads/img/logo-8.png" style="max-width: 120px; max-height: auto;" alt="AfriquePay Logo" />
-        </a>
+				<div class="logo-container">
+					<a href="../4.0.0" class="logo">
+						<img src="<?=base_url();?>uploads/img/logo.png" width="75" height="35" alt="Porto Admin" />
+					</a>
 
-        <!-- <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
-            <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
-        </div> -->
+					<div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+						<i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+					</div>
 
-    </div>
+				</div>
 
-    <!-- start: search & user box -->
-    <div class="header-right">
+				<!-- start: search & user box -->
+				<div class="header-right">
 
-        <span class="separator"></span>
+					<!-- <form action="pages-search-results.html" class="search nav-form">
+						<div class="input-group">
+							<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+							<button class="btn btn-default" type="submit"><i class="bx bx-search"></i></button>
+						</div>
+					</form> -->
 
-        <ul class="notifications">
-            <li>
-                <a href="#" class="notification-icon">
-                    <i class="bx bx-scan"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="notification-icon">
-                    <i class="bx bx-search"></i>
-                </a>
-            </li>
-        </ul>
+					<span class="separator"></span>
 
-        <span class="separator"></span>
+					<ul class="notifications">
+					
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+								<i class="bx bx-envelope"></i>
+								<span class="badge">4</span>
+							</a>
 
-        <div id="userbox" class="userbox">
-            <a href="#" data-bs-toggle="dropdown">
-                <figure class="profile-picture">
-                    <img src="<?=base_url();?>uploads/img/timi.jpg" alt="Joseph Doe" class="rounded" data-lock-picture="<?=base_url();?>uploads/img/timi.jpg" />
-                </figure>
-                <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-                    <span class="name text-light">Oladepo Olushina</span>
-                    <span class="role" style="color: #FFA753;">N 200,000</span>
-                </div>
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="float-end badge badge-default">230</span>
+									Messages
+								</div>
 
-                <i class="fa custom-caret"></i>
-            </a>
+								<div class="content">
+									<ul>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joseph Doe Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joseph Doe</span>
+												<span class="message">Lorem ipsum dolor sit.</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joseph Junior</span>
+												<span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joe Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joe Junior</span>
+												<span class="message">Lorem ipsum dolor sit.</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joseph Junior</span>
+												<span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
+											</a>
+										</li>
+									</ul>
 
-            <div class="dropdown-menu">
-                <ul class="list-unstyled mb-2">
-                    <li class="divider"></li>
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="profile"><i class="bx bx-user-circle"></i> Profile</a>
-                    </li>
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="transactions"><i class='bx bx-transfer'></i> Transaction</a>
-                    </li>
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="withdraw"><i class='bx bxs-right-arrow-square'></i> Withdraw</a>
-                    </li>
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="fundpacket"><i class='bx bx-wallet-alt'></i> Fund Packet</a>
-                    </li>
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="resetpin"><i class='bx bx-reset'></i> Reset Pin</a>
-                    </li>
-                    <!-- <li>
-                        <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class='bx bxs-up-arrow-square'></i> Generate Token</a>
-                    </li> -->
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class='bx bxs-contact'></i> Contact Us</a>
-                    </li>
-                    <li>
-                        <a role="menuitem" tabindex="-1" href="logout"><i class="bx bx-power-off"></i> Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- end: search & user box -->
-</header>
-<!-- end: header -->
+									<hr />
+
+									<div class="text-end">
+										<a href="#" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
+								<i class="bx bx-bell"></i>
+								<span class="badge">3</span>
+							</a>
+
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="float-end badge badge-default">3</span>
+									Alerts
+								</div>
+
+								<div class="content">
+									<ul>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<i class="fas fa-thumbs-down bg-danger text-light"></i>
+												</div>
+												<span class="title">Server is Down!</span>
+												<span class="message">Just now</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<i class="bx bx-lock bg-warning text-light"></i>
+												</div>
+												<span class="title">User Locked</span>
+												<span class="message">15 minutes ago</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<i class="fas fa-signal bg-success text-light"></i>
+												</div>
+												<span class="title">Connection Restaured</span>
+												<span class="message">10/10/2021</span>
+											</a>
+										</li>
+									</ul>
+
+									<hr />
+
+									<div class="text-end">
+										<a href="#" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<span class="separator"></span>
+
+					<div id="userbox" class="userbox">
+						<a href="#" data-bs-toggle="dropdown">
+							<figure class="profile-picture">
+								<img src="<?=base_url();?>uploads/img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle" data-lock-picture="img/!logged-user.jpg" />
+							</figure>
+							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+								<span class="name"><?php echo $username; ?></span>
+								<span class="role">Administrator</span>
+							</div>
+
+							<i class="fa custom-caret"></i>
+						</a>
+
+						<div class="dropdown-menu">
+							<ul class="list-unstyled mb-2">
+								<li class="divider"></li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="bx bx-user-circle"></i> My Profile</a>
+								</li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="bx bx-lock"></i> Lock Screen</a>
+								</li>
+								<li>
+									<a role="menuitem" tabindex="-1" href="logout"><i class="bx bx-power-off"></i> Logout</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- end: search & user box -->
+			</header>

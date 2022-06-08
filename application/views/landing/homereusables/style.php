@@ -6,4 +6,5 @@
     <link rel="stylesheet" href="<?=base_url();?>uploads/assets/css/plugin/slick.css">
     <link rel="stylesheet" href="<?=base_url();?>uploads/assets/css/arafat-font.css">
     <link rel="stylesheet" href="<?=base_url();?>uploads/assets/css/plugin/animate.css">
-    <link rel="stylesheet" href="<?=base_url();?>uploads/assets/css/style.css">
+    <!-- <link rel="stylesheet" href="<?=base_url();?>uploads/assets/css/style.css"> -->
+    <link rel="stylesheet" href="<?=base_url();?>uploads/assets/scss/style.css">

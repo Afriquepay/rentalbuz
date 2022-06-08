@@ -5,7 +5,7 @@
             <div class="row d-flex header-area">
               <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="/rentalbuz">
-                  <img src="<?=base_url();?>uploads/assets/images/rentalbuz.png" class="logo" alt="logo">
+                  <img src="<?=base_url();?>uploads/img/rentalbuz.png" class="logo" alt="logo">
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbar-content">

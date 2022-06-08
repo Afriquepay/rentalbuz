@@ -52,8 +52,8 @@ public function login_user($user){
  //$email,$pass
 
   $this->db->select('*');
-  $this->db->from('admintbl');
-  $this->db->where("username= '".$user['username']."' AND password= '".$user['password']."'");
+  $this->db->from('user');
+  $this->db->where("email= '".$user['email']."' AND password= '".$user['password']."'");
 
  
   if($query=$this->db->get())
@@ -67,6 +67,27 @@ public function login_user($user){
  
  
 }
+
+
+public function login_admin($user){
+  //$email,$pass
+ 
+   $this->db->select('*');
+   $this->db->from('admintbl');
+   $this->db->where("username= '".$user['username']."' AND password= '".$user['password']."'");
+ 
+  
+   if($query=$this->db->get())
+   {
+ 
+       return $query->result_array();
+   }
+   else{
+     return false;
+   }
+  
+  
+ }
 
  
 }

@@ -5,78 +5,69 @@
     <body class="bg-light">
 		<section class="body">
 
-			<?php include('homereusables/backnav.php')?>
+			<?php include('homereusables/navbar.php')?>
 			
-            <div class="d-flex justify-content-center align-items-center" style="padding-top: 100px;">
-                <div class="row">
-                    <div class="col">
-                        <section class="card">
-                            <header class="card-header">
-                                <!-- <div class="card-actions">
-                                    <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-                                    <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-                                </div> -->
+			<div class="inner-wrapper">
+				<aside id="sidebar-left" class="sidebar-left d-none d-md-block">
+					<?php include('homereusables/sidenav.php')?>
+				</aside>
 
-                                <h2 class="card-title">Transaction history</h2>
-                            </header>
-                            <div class="card-body">
-                                <table class="table table-bordered table-striped mb-0" id="datatable-details">
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Type</th>
-                                            <th>Description</th>
-                                            <th>TransactionId</th>
-                                            <th>Amount(NGN)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>23-03-2022</td>
-                                            <td>Credit</td>
-                                            <td>Wallet funding with card payment</td>
-                                            <td class="center">pack-234-37997</td>
-                                            <td class="center">2000.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>23-03-2022</td>
-                                            <td>Credit</td>
-                                            <td>Wallet funding with card payment</td>
-                                            <td class="center">pack-234-37997</td>
-                                            <td class="center">2000.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>23-03-2022</td>
-                                            <td>Credit</td>
-                                            <td>Wallet funding with card payment</td>
-                                            <td class="center">pack-234-37997</td>
-                                            <td class="center">2000.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>23-03-2022</td>
-                                            <td>Credit</td>
-                                            <td>Wallet funding with card payment</td>
-                                            <td class="center">pack-234-37997</td>
-                                            <td class="center">2000.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>23-03-2022</td>
-                                            <td>Credit</td>
-                                            <td>Wallet funding with card payment</td>
-                                            <td class="center">pack-234-37997</td>
-                                            <td class="center">2000.00</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
+				<section role="main" class="content-body">
+					<?php include('homereusables/breadcrumb.php')?>
+					<div class="w-100 p-3 shadow">
+                        <table class="table table-bordered table-striped mb-0 w-100" id="datatable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Sender</th>
+                                    <th>Receiver</th>
+                                    <th>Amount(NGN)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactionList">
+
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-            </div>
+				</section>
+			</div>
 
 		</section>
 
 		<?php include('homereusables/scripts.php')?>
+
+        <script>
+			$(document).ready(function(){
+                function fetchTransactions() {
+                    $.ajax({
+                        url: '<?= base_url('client/transaction_list') ?>',
+                        method: 'post',
+                        data: {},
+                        cache: false,
+                        processData: false,
+                        contentType: false,
+                        success: function(response){
+                            console.log(JSON.parse(response));
+                            let resp = JSON.parse(response);
+                            let innerHtml = "";
+                            resp.mydata.map((data) => {
+                                innerHtml += '<tr>'+
+                                            '<td>'+ (data.date).split(' ')[0] +'</td>'+
+                                            '<td>'+ data.message +'</td>'+
+                                            '<td>'+ data.sender +'</td>'+
+                                            '<td>'+ data.receiver +'</td>'+
+                                            '<td class="center">'+data.amount+'</td>'+
+                                        '</tr>';
+                            });
+
+                            $("#transactionList").html(innerHtml);
+                        }
+                    });
+                }
+                fetchTransactions();
+			});
+		</script>
 
 	</body>
 </html>

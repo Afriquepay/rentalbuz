@@ -38,7 +38,7 @@
                                     <p class="xlr">Helping tenants and occupants pay their rent at due time</p>
                                 </div>
                                 <div class="bottom-area">
-                                    <a href="register" class="cmn-btn">Open Account</a>
+                                    <a href="home/login" class="cmn-btn">Login Account</a>
                                     <a href="contact" class="cmn-btn second">Get in touch</a>
                                 </div>
                             </div>

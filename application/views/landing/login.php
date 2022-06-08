@@ -25,7 +25,7 @@
     <!-- header-section end -->
 
     <!-- Login In start -->
-    <section class="sign-in-up login">
+    <section class="login sign-in-up">
         <div class="overlay pt-120 pb-120">
             <div class="container">
                 <div class="row">
@@ -36,19 +36,19 @@
                                 <h2 class="title">Set Up Your Password</h2>
                                 <p>Your security is our top priority. You'll need this to log into your rentalbuz account</p>
                             </div>
-                            <form action="#">
+                            <form action="#" id="loginForm">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="single-input">
                                             <label for="email">Enter Your Email ID</label>
-                                            <input type="text" id="email" placeholder="Your email ID here">
+                                            <input type="email" id="email" placeholder="Your email ID here" name="email" required>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="single-input ">
-                                            <label for="confirmPass">Confirm Password</label>
+                                            <label for="confirmPass">Password</label>
                                             <div class="password-show d-flex align-items-center">
-                                                <input type="text" class="passInput" id="confirmPass" autocomplete="off" placeholder="Enter Your Password">
+                                                <input type="text" class="passInput" id="confirmPass" name="password" autocomplete="off" placeholder="Enter Your Password" required>
                                                 <img class="showPass" src="<?=base_url();?>uploads/assets/images/icon/show-hide.png" alt="icon">
                                             </div>
                                             <div class="forgot-area text-end">
@@ -58,7 +58,10 @@
                                     </div>
                                 </div>
                                 <div class="btn-area">
-                                    <button class="cmn-btn">Login</button>
+                                    <button class="cmn-btn" id="loginButton" type="submit">Login</button>
+                                    <div class="spinner-border text-primary" id="loader" style="display: none;" role="status">
+										<span class="visually-hidden">Loading...</span>
+									</div>
                                 </div>
                             </form>
                         </div>
@@ -72,6 +75,46 @@
     <!--==================================================================-->
     <?php include("homereusables/scripts.php"); ?>
     <script src="assets/js/main.js"></script>
+    <script>
+			$(document).ready(function(){
+
+				$("#loginForm").on('submit', function(e){
+					e.preventDefault();
+					const formData = new FormData(this);
+					// console.log(formData);
+					if(!this.checkValidity()){
+						e.preventDefault();
+						$(this).addClass('was-validated');
+					}else{
+						console.log('valid');
+						$("#loginButton").hide();
+						$("#loader").show();
+
+						$.ajax({
+							url: '<?= base_url('client/login_user') ?>',
+							method: 'post',
+							data: formData,
+							cache: false,
+							processData: false,
+							contentType: false,
+							success: function(response){
+								console.log(JSON.parse(response));
+								let resp = JSON.parse(response);
+								if(resp.error == false){
+									
+
+									$("#loginButton").show();
+									$("#loader").hide();
+								}else{
+									window.location.replace("<?=base_url()?>client/dashboard");
+								}
+							}
+						});
+					}
+				});
+
+			});
+		</script>
 </body>
 
 </html>

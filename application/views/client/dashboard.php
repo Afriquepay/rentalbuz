@@ -1,264 +1,214 @@
 <!doctype html>
-<html class="fixed">
-    <?php include('homereusables/head.php')?>
-	
-    <body class="bg-light">
+<html class="fixed sidebar-light">
+	<head>
+
+		<!-- Basic -->
+		<meta charset="UTF-8">
+
+		<title>Light Sidebar Layout | Porto Admin - Responsive HTML5 Template</title>
+		<meta name="keywords" content="HTML5 Admin Template" />
+		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<?php include('homereusables/head.php')?>
+
+	</head>
+	<body>
 		<section class="body">
 
+			<!-- start: header -->
 			<?php include('homereusables/navbar.php')?>
-			
-			<div class="tabs tabs-bottom tabs-primary">
-				<div class="tab-content d-flex justify-content-center align-items-center">
-					<div id="sendPacket" class="w-100 tab-pane active flex-column align-items-center justify-content-center">
-						
-						<!-- Desktop view starts -->
-						<div class="mt-5 w-100 d-none d-md-flex justify-content-between modal-basic" href="#sendPacketModal" style="padding-left: 300px; padding-right: 300px;">
-							<div class="d-flex justify-content-center align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 70px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-5">
-									<span style="font-weight: bold;">Mature Minds</span>
-									<span>09079615867: Ok</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<span style="font-weight: bold;">25 Jan</span>
-								<div class="d-flex justify-content-between">
-									<i class='bx bx-bell' style="font-size: 20px;"></i>
-									<span class="float-end badge badge-primary d-flex justify-content-center align-items-center">4</span>
-								</div>
-							</div>
-						</div>
-						<div class="mt-2 mb-5 mb w-100 d-none d-md-flex justify-content-between modal-basic" href="#sendPacketModal" style="padding-left: 300px; padding-right: 300px;">
-							<div class="d-flex justify-content-center align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 70px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-5">
-									<span style="font-weight: bold;">Mature Minds</span>
-									<span>09079615867: Ok</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<span style="font-weight: bold;">25 Jan</span>
-								<div class="d-flex justify-content-between">
-									<i class='bx bx-bell' style="font-size: 20px;"></i>
-									<span class="float-end badge badge-primary d-flex justify-content-center align-items-center">4</span>
-								</div>
-							</div>
-						</div>
-						<!-- Desktop view ends -->
+			<!-- end: header -->
 
-						<!-- Mobile View starts -->
-						<div class="d-flex d-md-none justify-content-between w-100 mt-3 modal-basic" href="#sendPacketModal">
-							<div class="d-flex justify-content-between align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 50px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-2">
-									<span style="font-weight: bold;">Mature Minds</span>
-									<span>09079615867: Ok</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<span style="font-weight: bold;">25 Jan</span>
-								<div class="d-flex justify-content-between">
-									<i class='bx bx-bell' style="font-size: 20px;"></i>
-									<span class="float-end badge badge-primary d-flex justify-content-center align-items-center">4</span>
-								</div>
-							</div>
-						</div>
-						<div class="d-flex d-md-none justify-content-between w-100 mt-3 mb-5 modal-basic" href="#sendPacketModal">
-							<div class="d-flex justify-content-between align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 50px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-2">
-									<span style="font-weight: bold;">Mature Minds</span>
-									<span>09079615867: Ok</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<span style="font-weight: bold;">25 Jan</span>
-								<div class="d-flex justify-content-between">
-									<i class='bx bx-bell' style="font-size: 20px;"></i>
-									<span class="float-end badge badge-primary d-flex justify-content-center align-items-center">4</span>
-								</div>
-							</div>
-						</div>
-						<!-- Mobile view ends -->
-						
-						<!-- Modal Packet -->
-						<div id="sendPacketModal" class="modal-block modal-header-color modal-block-primary mfp-hide">
-							<section class="card">
-								<header class="card-header">
-									<h2 class="card-title">Send Packet</h2>
-								</header>
-								<div class="card-body">
-									<div class="form-group row pb-3">
-										<label class="col-sm-4 control-label text-sm-end pt-2">Phone number: </label>
-										<div class="col-sm-8">
-											<input type="text" name="phone" class="form-control" placeholder="08123456789" value="08026332541">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-4 control-label text-sm-end pt-2">Amount: </label>
-										<div class="col-sm-8">
-											<input type="email" name="email" class="form-control" placeholder="1000">
-										</div>
-									</div>
-								</div>
-								<footer class="card-footer">
-									<div class="row">
-										<div class="col-md-12 text-end">
-											<button id="sticky-success" class="btn btn-primary modal-dismiss">Confirm</button>
-											<button class="btn btn-default modal-dismiss">Cancel</button>
-										</div>
-									</div>
-								</footer>
-							</section>
-						</div>
-						
-					</div>
-					<div id="wallet" class="tab-pane">
-						<div class="d-flex justify-content-center align-items-center" style="height: 400px; padding-top: 100px;">
-							<section class="card card-featured card-featured-primary">
-								<header class="card-header">
-									<!-- <div class="card-actions">
-										<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-										<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-									</div> -->
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				<?php include('homereusables/sidenav.php')?>
+				<!-- end: sidebar -->
 
-									<h2 class="card-title">Wallet</h2>
-									<p class="card-subtitle">Account Balance</p>
-								</header>
-								<div class="card-body" style="width: 350px;">
-									<div class="m-5 d-flex justify-content-center align-items-center">
-										<i class='bx bxs-wallet mx-3' style="font-size: 30px"></i>
-										<h3 class="text-center">N 200,000</h3>
-									</div>
-									
-									<div class="form-group row">
-										<div class="col-6 text-center">
-											<a class="btn btn-primary btn-sm mt-2" href="fund-packet" id="sticky-success">Fund now</a>
+				<section role="main" class="content-body">
+					<header class="page-header">
+						<h2><marquee>Please Complete your profile to apply for loan</marquee></h2>
+
+					</header>
+
+					<!-- start: page -->
+					<div class="row">
+						<div class="col-lg-12 mb-3">
+						<section class="card">
+										<div class="card-body">
+											<div class="circular-bar circular-bar-xs m-0 mt-1 me-4 mb-0 float-end">
+												<div class="circular-bar-chart" data-percent="45" data-plugin-options='{ "barColor": "#2baab1", "delay": 300, "size": 70, "lineWidth": 7 }'>
+													<strong>Average</strong>
+													<label><span class="percent">45</span>%</label>
+												</div>
+											</div>
+											<div class="h4 font-weight-bold mb-0">Profile Level</div>
+											<p class="text-3 text-muted mb-0">Please Complete your Profile to apply for Loan</p>
 										</div>
-										<div class="col-6 text-center">
-											<a class="btn btn-success btn-sm mt-2" href="withdraw" id="sticky-success">Withdraw</a>
+									</section>
+							
+						</div>
+						<div class="col-lg-12">
+							<div class="row mb-3">
+								<div class="col-xl-6">
+									<section class="card card-featured-left card-featured-primary mb-3">
+										<div class="card-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-primary">
+														<i class="fas fa-life-ring"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Active loan</h4>
+														<div class="info">
+															<strong class="amount">1</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a class="text-muted text-uppercase" href="#">view</a>
+													</div>
+												</div>
+											</div>
 										</div>
-									</div>
+									</section>
 								</div>
-							</section>
+								<div class="col-xl-6">
+									<section class="card card-featured-left card-featured-secondary">
+										<div class="card-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-secondary">
+														#
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Loan Amount</h4>
+														<div class="info">
+															<strong class="amount">NGN 14,890.30</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a class="text-muted text-uppercase" href="#">Pay Now</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-6">
+									<section class="card card-featured-left card-featured-tertiary mb-3">
+										<div class="card-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-tertiary">
+														<i class="fas fa-dollar-bag"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Today's Orders</h4>
+														<div class="info">
+															<strong class="amount">38</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a class="text-muted text-uppercase" href="#">(statement)</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div class="col-xl-6">
+									<section class="card card-featured-left card-featured-quaternary">
+										<div class="card-body">
+											<div class="widget-summary">
+												<div class="widget-summary-col widget-summary-col-icon">
+													<div class="summary-icon bg-quaternary">
+														<i class="fas fa-user"></i>
+													</div>
+												</div>
+												<div class="widget-summary-col">
+													<div class="summary">
+														<h4 class="title">Today's Visitors</h4>
+														<div class="info">
+															<strong class="amount">3765</strong>
+														</div>
+													</div>
+													<div class="summary-footer">
+														<a class="text-muted text-uppercase" href="#">(report)</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div id="game" class="tab-pane">
-						<h3>Game</h3>
-					</div>
-					<div id="basket" class="w-100 tab-pane flex-column align-items-center justify-content-center">
-						<!-- Desktop view starts -->
-						<div class="mt-5 w-100 d-none d-md-flex justify-content-between" style="padding-left: 300px; padding-right: 300px;">
-							<div class="d-flex justify-content-center align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 70px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-5">
-									<span style="font-weight: bold;">Mature Minds</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<div class="d-flex justify-content-between">
-									<i class='bx bxs-plus-square plus1' style="font-size: 20px; color: #6D50F8;"></i>
-									<i class='bx bxs-minus-square minus1' style="font-size: 20px; display: none; color: #FF7A42;"></i>
-								</div>
-							</div>
-						</div>
-						<div class="mt-2 mb-5 mb w-100 d-none d-md-flex justify-content-between" style="padding-left: 300px; padding-right: 300px;">
-							<div class="d-flex justify-content-center align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 70px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-5">
-									<span style="font-weight: bold;">Mature Minds</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<div class="d-flex justify-content-between">
-									<i class='bx bxs-plus-square plus2' style="font-size: 20px; color: #6D50F8;"></i>
-									<i class='bx bxs-minus-square minus2' style="font-size: 20px; display: none; color: #FF7A42;"></i>
-								</div>
-							</div>
-						</div>
-						<!-- Desktop view ends -->
 
-						<!-- Mobile View starts -->
-						<div class="d-flex d-md-none justify-content-between w-100 mt-3">
-							<div class="d-flex justify-content-between align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 50px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-2">
-									<span style="font-weight: bold;">Mature Minds</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<div class="d-flex justify-content-between">
-									<i class='bx bxs-plus-square plus1' style="font-size: 20px; color: #6D50F8;"></i>
-									<i class='bx bxs-minus-square minus1' style="font-size: 20px; display: none; color: #FF7A42;"></i>
-								</div>
-							</div>
-						</div>
-						<div class="d-flex d-md-none justify-content-between w-100 mt-3 mb-5">
-							<div class="d-flex justify-content-between align-items-center">
-								<img src="<?=base_url();?>uploads/img/timi.jpg" class="rounded" style="max-height: 50px; max-width: auto;"/>
-								<div class="d-flex flex-column mx-2">
-									<span style="font-weight: bold;">Mature Minds</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column justify-content-center align-items-center">
-								<div class="d-flex justify-content-between">
-									<i class='bx bxs-plus-square plus2' style="font-size: 20px; color: #6D50F8;"></i>
-									<i class='bx bxs-minus-square minus2' style="font-size: 20px; display: none; color: #FF7A42;"></i>
-								</div>
-							</div>
-						</div>
-						<!-- Mobile view ends -->
-						<div class="fixed-bottom text-center" style="margin-bottom: 65px;">
-							<a class="btn btn-primary w-100 mt-2 modal-basic" href="#basketModal">Proceed</a>
-						</div>
-
-						<!-- Modal Basket -->
-						<div id="basketModal" class="modal-block modal-header-color modal-block-primary mfp-hide">
-							<section class="card">
-								<header class="card-header">
-									<h2 class="card-title">Create Basket</h2>
-								</header>
-								<div class="card-body">
-									<div class="form-group row">
-										<label class="col-sm-4 control-label text-sm-end pt-2">Amount: </label>
-										<div class="col-sm-8">
-											<input type="text" name="text" class="form-control" placeholder="0">
-											<span style="font-size: 10px; color: #FF7A42;">Enter the amount of money you are requesting</span>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-4 control-label text-sm-end pt-2">Description: </label>
-										<div class="col-sm-8">
-											<input type="text" name="desc" class="form-control" placeholder="Description">
-											<span style="font-size: 10px; color: #FF7A42;">Describe why you want the money</span>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-4 control-label text-sm-end pt-2">Lifespan: </label>
-										<div class="col-sm-8">
-											<input type="text" name="desc" class="form-control" placeholder="number of days">
-											<span style="font-size: 10px; color: #FF7A42;">Enter the period of expiry for your basket</span>
-										</div>
-									</div>
-								</div>
-								<footer class="card-footer">
-									<div class="row">
-										<div class="col-md-12 text-end">
-											<button id="sticky-success" class="btn btn-primary modal-dismiss">Send</button>
-											<button class="btn btn-default modal-dismiss">Cancel</button>
-										</div>
-									</div>
-								</footer>
-							</section>
-						</div>
-					</div>
-				</div>
-				<?php include('homereusables/bottomNav.php')?>
+					
+					<!-- end: page -->
+				</section>
 			</div>
+
+			<?php include('homereusables/collapsible-right-nav.php')?>
 
 		</section>
 
+		<!-- Vendor -->
+	
 		<?php include('homereusables/scripts.php')?>
+
+		<!-- Specific Page Vendor -->
+		<script src="<?=base_url();?>uploads/vendor/jquery-ui/jquery-ui.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jquery-appear/jquery.appear.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/bootstrapv5-multiselect/js/bootstrap-multiselect.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jquery.easy-pie-chart/jquery.easypiechart.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/flot/jquery.flot.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/flot.tooltip/jquery.flot.tooltip.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/flot/jquery.flot.pie.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/flot/jquery.flot.categories.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/flot/jquery.flot.resize.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/raphael/raphael.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/morris/morris.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/gauge/gauge.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/snap.svg/snap.svg.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/liquid-meter/liquid.meter.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/jquery.vmap.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+		<script src="<?=base_url();?>uploads/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="<?=base_url();?>uploads/js/theme.js"></script>
+
+		<!-- Theme Custom -->
+		<script src="<?=base_url();?>uploads/js/custom.js"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="<?=base_url();?>uploads/js/theme.init.js"></script>
+
+		<!-- Examples -->
+		<script src="<?=base_url();?>uploads/js/examples/examples.dashboard.js"></script>
 
 	</body>
 </html>

@@ -16,7 +16,7 @@
 
             <ul class="nav nav-main">
                 <li>
-                    <a class="nav-link" href="<?=base_url()?>admin/dashboard">
+                    <a class="nav-link" href="dashboard">
                         <i class="bx bx-home-alt" aria-hidden="true"></i>
                         <span>Dashboard</span>
                     </a>                        

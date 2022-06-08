@@ -1,6 +1,6 @@
 <!-- start: header -->
-<header class="header">
-    <div class="logo-container">
+<header class="header bg-primary">
+    <div class="logo-container bg-primary">
         <a href="" class="logo">
             <img src="<?=base_url();?>uploads/img/logo-8.png" style="max-width: 120px; max-height: auto;" alt="AfriquePay Logo" />
         </a>

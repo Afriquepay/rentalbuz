@@ -2657,10 +2657,14 @@
 
 // Register Section
 .sign-in-up{
-    background-image: url(../images/sign-in-up-bg.png);
+    background-image: url(../images/use.png);
+    // z-index: -1;
     background-repeat: no-repeat;
-    background-position: right top;
-    margin-top: 118px;
+    background-position: center;
+    margin-top: 100px;
+    padding-top:150px;
+    // background-size: 100% 100%;
+    // margin-left: 150px;
     form{
         margin-top: -10px;
         .single-input{

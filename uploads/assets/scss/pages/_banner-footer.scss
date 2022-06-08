@@ -139,10 +139,11 @@
 .banner-section{
     .overlay{
         background-color: #F5FAFF;
-        background-image: url(../images/banner-bg.png);
+        background-image: url(../images/use.png);
         background-repeat: no-repeat;
-        background-size: auto;
-        background-position: right bottom 90px;
+        background-size: 100% 100%;
+        background-position: cover;
+        
         .banner-content{
             padding: 355px 0 320px;
             .top-area{
