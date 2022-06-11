@@ -4,7 +4,7 @@
 				        <div class="sidebar-title">
 				            Navigation
 				        </div>
-				        
+
 				    </div>
 
 				    <div class="nano">
@@ -13,10 +13,10 @@
 
 				                <ul class="nav nav-main">
 				                    <li>
-				                        <a class="nav-link" href="layouts-default.html">
+				                        <a class="nav-link" href="<?=base_url();?>client/dashboard">
 				                            <i class="bx bx-home-alt" aria-hidden="true"></i>
 				                            <span>Dashboard</span>
-				                        </a>                        
+				                        </a>
 				                    </li>
 
 				                    <li class="nav-parent">
@@ -26,19 +26,19 @@
 				                        </a>
 				                        <ul class="nav nav-children">
 				                            <li>
-												<a class="nav-link" href="">
-													<i class="bx bx-radio-circle" aria-hidden="true"></i><span>New Loan</span> 
+												<a class="nav-link" href="<?=base_url();?>client/new_loan">
+													<i class="bx bx-radio-circle" aria-hidden="true"></i><span>New Loan</span>
 				                                </a>
 				                            </li>
-				                          
+
 				                        </ul>
 										<ul class="nav nav-children">
 				                            <li>
-												<a class="nav-link" href="">
-													<i class="bx bx-radio-circle" aria-hidden="true"></i><span>List Loan</span> 
+												<a class="nav-link" href="<?=base_url();?>client/list_loan">
+													<i class="bx bx-radio-circle" aria-hidden="true"></i><span>List Loan</span>
 				                                </a>
 				                            </li>
-				                          
+
 				                        </ul>
 				                    </li>
 									<li>
@@ -46,9 +46,9 @@
 				                            <i class="bx bx-wrench" aria-hidden="true"></i>
 				                            <span>Settings</span>
 				                        </a>
-				                       
+
 				                    </li>
-				                  
+
 				                </ul>
 				            </nav>
 

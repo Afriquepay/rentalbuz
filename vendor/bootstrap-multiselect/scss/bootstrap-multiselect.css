@@ -64,38 +64,30 @@ span.multiselect-native-select select {
   margin: 0;
   padding: 0;
 }
-
 .multiselect-container .input-group {
   margin: 5px;
 }
-
 .multiselect-container .multiselect-reset .input-group {
   width: 93%;
 }
-
 .multiselect-container > li {
   padding: 0;
 }
-
 .multiselect-container > li > a.multiselect-all label {
   font-weight: bold;
 }
-
 .multiselect-container > li.multiselect-group label {
   margin: 0;
   padding: 3px 20px 3px 20px;
   height: 100%;
   font-weight: bold;
 }
-
 .multiselect-container > li.multiselect-group-clickable label {
   cursor: pointer;
 }
-
 .multiselect-container > li > a {
   padding: 0;
 }
-
 .multiselect-container > li > a > label {
   margin: 0;
   height: 100%;
@@ -103,12 +95,10 @@ span.multiselect-native-select select {
   font-weight: normal;
   padding: 3px 20px 3px 40px;
 }
-
 .multiselect-container > li > a > label.radio, .multiselect-container > li > a > label.checkbox {
   margin: 0;
 }
-
-.multiselect-container > li > a > label > input[type="checkbox"] {
+.multiselect-container > li > a > label > input[type=checkbox] {
   margin-bottom: 5px;
 }
 
@@ -120,9 +110,7 @@ span.multiselect-native-select select {
 .form-inline .multiselect-container label.checkbox, .form-inline .multiselect-container label.radio {
   padding: 3px 20px 3px 40px;
 }
-
-.form-inline .multiselect-container li a label.checkbox input[type="checkbox"], .form-inline .multiselect-container li a label.radio input[type="radio"] {
+.form-inline .multiselect-container li a label.checkbox input[type=checkbox], .form-inline .multiselect-container li a label.radio input[type=radio] {
   margin-left: -20px;
   margin-right: 0;
-}
-/*# sourceMappingURL=bootstrap-multiselect.css.map */
+}/*# sourceMappingURL=bootstrap-multiselect.css.map */

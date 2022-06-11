@@ -211,7 +211,7 @@
                     opacity: 1;
                     visibility: visible;
                 }
-            
+
                 .alt{
                     opacity: 0;
                     visibility: hidden;
@@ -234,7 +234,7 @@
     }
 }
 
-// Call to action 
+// Call to action
 .call-action{
     background-image: url(../images/call-action-bg.png);
     background-position: top;
@@ -383,7 +383,7 @@
     }
 }
 
-// Financial Planning 
+// Financial Planning
 .financial-planning {
     .cus-mar{
         margin-bottom: -30px;
@@ -830,7 +830,7 @@
     }
 }
 
-// FAQs 
+// FAQs
 .faqs-section{
     .section-header{
         p{
@@ -1022,7 +1022,7 @@
     }
 }
 
-// About Us 
+// About Us
 .about-section{
     background-image: url(../images/circle.png);
     background-repeat: no-repeat;
@@ -1421,7 +1421,7 @@
             border: 1px solid #EEF1FF;
             border-radius: 10px;
             margin-bottom: 30px;
-        }            
+        }
     }
     &.home-loan{
         position: relative;
@@ -1640,7 +1640,7 @@
     }
 }
 
-// How it works 
+// How it works
 .how-works{
     background: #F5FAFF;
     .nav-tabs{
@@ -2140,7 +2140,7 @@
     }
 }
 
-// Loan calculation 
+// Loan calculation
 .loan-calculation{
     position: relative;
     background: #F5FAFF;
@@ -2657,14 +2657,10 @@
 
 // Register Section
 .sign-in-up{
-    background-image: url(../images/use.png);
-    // z-index: -1;
+    background-image: url(../images/use1.png);
     background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 100px;
-    padding-top:150px;
-    // background-size: 100% 100%;
-    // margin-left: 150px;
+    background-position: right top;
+    margin-top: 118px;
     form{
         margin-top: -10px;
         .single-input{

@@ -52,7 +52,7 @@
 											<p class="text-3 text-muted mb-0">Please Complete your Profile to apply for Loan</p>
 										</div>
 									</section>
-							
+
 						</div>
 						<div class="col-lg-12">
 							<div class="row mb-3">
@@ -69,7 +69,7 @@
 													<div class="summary">
 														<h4 class="title">Active loan</h4>
 														<div class="info">
-															<strong class="amount">1</strong>
+															<strong class="amount"><?php echo count($loan) ?></strong>
 														</div>
 													</div>
 													<div class="summary-footer">
@@ -93,7 +93,7 @@
 													<div class="summary">
 														<h4 class="title">Loan Amount</h4>
 														<div class="info">
-															<strong class="amount">NGN 14,890.30</strong>
+															<strong class="amount">NGN <?php echo $loan[0]['amount'] ? $loan[0]['amount'] : "0" ;?></strong>
 														</div>
 													</div>
 													<div class="summary-footer">
@@ -112,19 +112,17 @@
 											<div class="widget-summary">
 												<div class="widget-summary-col widget-summary-col-icon">
 													<div class="summary-icon bg-tertiary">
-														<i class="fas fa-dollar-bag"></i>
+														#
 													</div>
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">Today's Orders</h4>
+														<h4 class="title">Paid Amount</h4>
 														<div class="info">
-															<strong class="amount">38</strong>
+															<strong class="amount">NGN 0</strong>
 														</div>
 													</div>
-													<div class="summary-footer">
-														<a class="text-muted text-uppercase" href="#">(statement)</a>
-													</div>
+
 												</div>
 											</div>
 										</div>
@@ -136,19 +134,17 @@
 											<div class="widget-summary">
 												<div class="widget-summary-col widget-summary-col-icon">
 													<div class="summary-icon bg-quaternary">
-														<i class="fas fa-user"></i>
+														#
 													</div>
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">Today's Visitors</h4>
+														<h4 class="title">Balance</h4>
 														<div class="info">
-															<strong class="amount">3765</strong>
+															<strong class="amount">NGN 0</strong>
 														</div>
 													</div>
-													<div class="summary-footer">
-														<a class="text-muted text-uppercase" href="#">(report)</a>
-													</div>
+
 												</div>
 											</div>
 										</div>
@@ -158,7 +154,7 @@
 						</div>
 					</div>
 
-					
+
 					<!-- end: page -->
 				</section>
 			</div>
@@ -168,7 +164,7 @@
 		</section>
 
 		<!-- Vendor -->
-	
+
 		<?php include('homereusables/scripts.php')?>
 
 		<!-- Specific Page Vendor -->

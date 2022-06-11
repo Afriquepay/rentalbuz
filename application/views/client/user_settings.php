@@ -95,13 +95,13 @@ input[type=number]::-webkit-outer-spin-button {
                                     <li class="nav-item">
 										<a class="nav-link" data-bs-target="#document" href="#document" data-bs-toggle="tab" class="text-center">Verifications</a>
 									</li>
-                                   
+
 								</ul>
 								<div class="tab-content">
 									<div id="popular10" class="tab-pane active">
                                     <form class="ecommerce-form action-buttons-fixed" action="#" id="generalform" method="post" enctype='multipart/form-data' >
-                                        
-                                      
+
+
                                         <div class="row">
                                             <div class="col">
                                                 <section class="card card-modern card-big-info">
@@ -109,11 +109,11 @@ input[type=number]::-webkit-outer-spin-button {
                                                         <div class="row">
                                                             <div class="col-lg-2-5 col-xl-1-5">
                                                             <img id="userpix" src="../<?php echo $userinfo[0]['ppix'] ? $userinfo[0]['ppix'] : 'http://via.placeholder.com/150x150'?>" style="border-radius:50%" width="150px" height="150px" />
-                                                                <input type="file" id="myfile" style="display: none;" name="userimage"/>  
+                                                                <input type="file" id="myfile" style="display: none;" name="userimage"/>
                                                                 <h2 class="card-big-info-title">User Profile Pix</h2>
                                                                 <p>Click on the circle to select image</p>
-                                                                
-                                                                
+
+
                                                             </div>
                                                             <div class="col-lg-12-8 col-xl-4-5">
                                                                 <div class="row">
@@ -140,7 +140,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <input type="text" class="form-control form-control-modern" name="lastname" value="<?php echo $userinfo[0]['lastname']; ?>" required />
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">Email</label>
@@ -148,8 +148,8 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <input type="email" class="form-control form-control-modern" name="email" value="<?php echo $userinfo[0]['email']; ?>" required readonly />
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
-                                                                   
+                                                                    </div>
+
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">Gender</label>
@@ -160,29 +160,29 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 </select>
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <div class="col-md-6">
-                                                                    
-                                                                
-                                                                <p style="font-size:0.9em">Note: (1) Image must be clear</p>   
+
+
+                                                                <p style="font-size:0.9em">Note: (1) Image must be clear</p>
                                                                       <p style="font-size:0.9em">(2) Image with good resolution</p>
                                                                       <p style="font-size:0.9em">(3) Image must be your recent picture</p>
                                                                       <p style="font-size:0.9em">(4) Image must show your face</p>
                                                                     </div>
-                                                                    
+
                                                                 </div>
-                                                            </div> 
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </section>
                                             </div>
                                         </div>
                                         <div class="row action-buttons">
-                                           
+
                                             <div class="col-12 col-md-auto ms-md-auto mt-3 mt-md-0 ms-auto">
                                                 <button type="submit" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading..." id="crtbtngeneral">
                                                     <i class="bx bx-save text-4 me-2"></i> Save
-                                                </button>    
+                                                </button>
                                                 <div class="spinner-border text-primary" style="display:none;" id="loaderforgeneralform" role="status">
                                                     <span class="visually-hidden">Loading...</span>
                                                 </div>
@@ -192,7 +192,7 @@ input[type=number]::-webkit-outer-spin-button {
 								</div>
 								<div id="recent10" class="tab-pane">
                                     <form class="ecommerce-form action-buttons-fixed" action="#" id="otherinfo">
-                                            
+
                                         <div class="row">
                                             <div class="col">
                                                 <section class="card card-modern card-big-info">
@@ -210,29 +210,36 @@ input[type=number]::-webkit-outer-spin-button {
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">State of Residence</label>
                                                                             <div class="col-lg-12 col-xl-12">
                                                                                 <select class="form-control form-control-modern" name="state" required id="state" >
-                                                                                    <?php 
+                                                                                    <?php
                                                                                         foreach($states as $state){?>
-                                                                                        
+
                                                                                         <option value="<?php echo $state['id'];?>" <?php echo $userinfo[0]['state_id'] == $state['id'] ? "selected" : "" ?>><?php echo $state['name'];?></option>
 
-                                                                                     <?php  
+                                                                                     <?php
                                                                                       }
                                                                                     ?>
 
                                                                                 </select>
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">LGA of Residence</label>
                                                                             <div class="col-lg-12 col-xl-12">
                                                                                 <select class="form-control form-control-modern" name="lga" required id="lga">
-                                                                                      
+                                                                                <?php
+                                                                                    foreach($lgas as $lga){?>
+
+                                                                                    <option value="<?php echo $lga['id'];?>" <?php echo $userinfo[0]['lgas_id']== $lga['id'] ? "selected" : "" ?>><?php echo $lga['name'];?></option>
+
+                                                                                    <?php
+                                                                                    }
+                                                                                    ?>
                                                                                 </select>
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">Address 1</label>
@@ -240,7 +247,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <input type="text" class="form-control form-control-modern" name="address1" value="<?php echo $userinfo[0]['addr1'] ?>" required />
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">Address2</label>
@@ -248,7 +255,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <input type="text" class="form-control form-control-modern" name="address2" value="<?php echo $userinfo[0]['addr2'] ?>" required />
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">Country</label>
@@ -256,8 +263,8 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <input type="text" class="form-control form-control-modern" name="country" value="Nigeria" required readonly />
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
-                                                                    
+                                                                    </div>
+
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">Occupation</label>
@@ -265,7 +272,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <input type="text" class="form-control form-control-modern" name="occupation" value="<?php echo $userinfo[0]['occupation'] ?>" required />
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group  pb-3">
                                                                             <label class="col-lg-12 col-xl-12 control-label mb-0">Company/Industry/Institute Name</label>
@@ -273,28 +280,28 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <input type="text" class="form-control form-control-modern" name="industry" value="<?php echo $userinfo[0]['industry'] ?>" required />
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                 </div>
-                                                            </div> 
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </section>
                                             </div>
                                         </div>
                                         <div class="row action-buttons">
-                                        
+
                                             <div class="col-12 col-md-auto ms-md-auto mt-3 mt-md-0 ms-auto">
                                                 <button type="submit" id="crtbtnother" class="submit-button btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
                                                     <i class="bx bx-save text-4 me-2"></i> Save
-                                                </button>    
-                                        
+                                                </button>
+
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div id="document" class="tab-pane">
-                                    
-                                            
+
+
                                         <div class="row">
                                             <div class="col">
                                                 <section class="card card-modern card-big-info">
@@ -317,7 +324,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                                 <label class="col-lg-12 col-xl-12 control-label mb-0">Phone number</label>
                                                                                                 <div class="col-lg-12 col-xl-12">
                                                                                                     <input type="text" class="form-control form-control-modern" name="phone" value="<?php echo $userinfo[0]['phone']; ?>" readonly/>
-                                                                                                    <span class="text-success">Verified <i class="fa fa-check fa-2x"></i></span> 
+                                                                                                    <span class="text-success">Verified <i class="fa fa-check fa-2x"></i></span>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -336,8 +343,8 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                             <h4>ID Front</h4>
                                                                                         </div>
                                                                                         <div class="card-body b">
-                                                                                        <img src="../<?php echo $userinfo[0]['id_front']?>" id="frontimg"  alt="" width="300px" height="150px">
-                                                                                         
+                                                                                        <img src="../<?php echo $userinfo[0]['id_front']?>" alt="" width="300px" height="150px">
+
 
                                                                                         </div>
                                                                                     </div>
@@ -348,8 +355,8 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                         <h4>ID Back</h4>
                                                                                         </div>
                                                                                         <div class="card-body b">
-                                                                                        <img src="../<?php echo $userinfo[0]['id_back']?>" id="backimg" alt="" width="300px" height="150px">
-                                                                                          
+                                                                                        <img src="../<?php echo $userinfo[0]['id_back']?>"  alt="" width="300px" height="150px">
+
 
                                                                                         </div>
                                                                                     </div>
@@ -360,7 +367,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                             </div>
                                                                     </div>
                                                                     <div class="col-md-6">
-                                                                       
+
                                                                         <div class="container height-100 d-flex justify-content-center align-items-center" >
                                                                             <div class="position-relative" id="box1">
                                                                                 <div class="card p-2 text-center">
@@ -369,12 +376,12 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                     <span onclick="verifyPhone()" style="color:blue;font-weight:bold;">Try again</span>
 
                                                                                     <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
-                                                                                         <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> 
+                                                                                         <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" />
                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" />
-                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> 
-                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> 
-                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> 
-                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> 
+                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" />
+                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" />
+                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" />
+                                                                                          <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" />
                                                                                     </div>
                                                                                     <span class="text-danger" id="expiretext" style="display:none">Code expire please try again</span>
                                                                                     <span class="text-danger" id="wrongcode" style="display:none">Please enter correct Code</span>
@@ -389,14 +396,14 @@ input[type=number]::-webkit-outer-spin-button {
                                                                         </div>
                                                                             <div class="mt-1">
                                                                                 <button class="btn btn-primary" type="button" onclick="verifyPhone()" id="verifybtn" disabled>Verify</button>
-                                                                                
+
                                                                                 <div class="spinner-border text-primary" style="display:none;" id="loader" role="status">
                                                                                     <span class="visually-hidden">Loading...</span>
                                                                                 </div>
-                                                                                  
+
                                                                             </div>
                                                                         </div>
-                                                                    </div> 
+                                                                    </div>
                                                                     <form id="uploadid" style="display:<?php echo $userinfo[0]['id_back'] ? 'none' : '' ?>">
                                                                         <div class="col-lg-12">
                                                                             <div class="row">
@@ -410,7 +417,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                         </div>
                                                                                         <div class="card-body b">
                                                                                         <img src="http://via.placeholder.com/300x150" id="frontimg"  alt="" width="300px" height="150px">
-                                                                                        <input type="file" id="front" style="display: none;" name="frontid"/>  
+                                                                                        <input type="file" id="front" style="display: none;" name="frontid"/>
 
                                                                                         </div>
                                                                                     </div>
@@ -424,7 +431,7 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                         </div>
                                                                                         <div class="card-body b">
                                                                                         <img src="http://via.placeholder.com/300x150" id="backimg" alt="" width="300px" height="150px">
-                                                                                        <input type="file" id="back" style="display: none;" name="backid"/>  
+                                                                                        <input type="file" id="back" style="display: none;" name="backid"/>
 
                                                                                         </div>
                                                                                     </div>
@@ -432,19 +439,19 @@ input[type=number]::-webkit-outer-spin-button {
                                                                                 <div class="col-lg-3 mt-1">
                                                                                     <button class="btn btn-primary" type="submit" id="crtbtnid">Submit</button>
                                                                                 </div>
-                                                                                
+
                                                                             </div>
                                                                         </div>
                                                                     </form>
                                                                 </div>
-                                                            </div> 
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </section>
                                             </div>
                                         </div>
-                                        
-                                   
+
+
                                 </div>
 							</div>
 							</div>
@@ -460,7 +467,7 @@ input[type=number]::-webkit-outer-spin-button {
 		</section>
 
 		<!-- Vendor -->
-	
+
 		<?php include('homereusables/scripts.php')?>
         <script src="<?=base_url();?>uploads/vendor/pnotify/pnotify.custom.js"></script>
 
@@ -484,7 +491,7 @@ renderImg(backimg,back);
     $('#userpix').click(function(){
 	    $('#myfile').click()
     });
-    
+
 
     $('#backbtn').click(function(){
 	    $('#back').click()
@@ -512,7 +519,7 @@ formElem.addEventListener('submit', (e) => {
 		});
 
 		let result = await response.json();
-        
+
 		if(result[0].message == "yes"){
 			// window.location = "dashboard";
 			$(function(){
@@ -542,7 +549,7 @@ formElem.addEventListener('submit', (e) => {
 		}
 	}, 2000);
   // construct a FormData object, which fires the formdata event
-    
+
 });
 
 
@@ -563,7 +570,7 @@ formElement.addEventListener('submit', (e) => {
 		});
 
 		let result = await response.json();
-        
+
 		if(result[0].message == "yes"){
 			// window.location = "dashboard";
 			$(function(){
@@ -593,7 +600,7 @@ formElement.addEventListener('submit', (e) => {
 		}
 	}, 2000);
   // construct a FormData object, which fires the formdata event
-    
+
 });
 
 
@@ -615,7 +622,7 @@ formOther.addEventListener('submit', (e) => {
 		});
 
 		let result = await response.json();
-        
+
 		if(result[0].message == "yes"){
 			// window.location = "dashboard";
 			$(function(){
@@ -645,7 +652,7 @@ formOther.addEventListener('submit', (e) => {
 		}
 	}, 2000);
   // construct a FormData object, which fires the formdata event
-    
+
 });
 
 
@@ -671,7 +678,7 @@ for (let i = 0; i < inputs.length; i++) { inputs[i].addEventListener('keydown', 
         }
 
     }
-    
+
     async function checkotp(){
 
         let otp = $('#first').val()+ $('#second').val()+$('#third').val()+$('#fourth').val()+$('#fifth').val()+$('#sixth').val();
@@ -712,7 +719,7 @@ for (let i = 0; i < inputs.length; i++) { inputs[i].addEventListener('keydown', 
                 }
             }
         }, 3000);
-       
+
 
     }
 
@@ -739,7 +746,7 @@ for (let i = 0; i < inputs.length; i++) { inputs[i].addEventListener('keydown', 
         </script>
 		<!-- Specific Page Vendor -->
 
-        
+
 		<script src="<?=base_url();?>uploads/vendor/jquery-ui/jquery-ui.js"></script>
 		<script src="<?=base_url();?>uploads/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
 		<script src="<?=base_url();?>uploads/vendor/jquery-appear/jquery.appear.js"></script>

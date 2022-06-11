@@ -9,6 +9,7 @@ class Client extends CI_Controller
         $this->ci = & get_instance();
         $this->load->model("Crud");
         $this->load->helper('cookie');
+        $this->load->library('user_agent');
         $this
             ->load
             ->library("session");
@@ -361,7 +362,7 @@ class Client extends CI_Controller
                 */
                 /*
                 stdClass Object ( [status] => [message] => You cannot initiate third party payouts as a starter business ) {"accountString":"OLADIPUPO, MUIDEEN OLAIDE 0030757234 GTBANK","recipientcode":"RCP_wewm6cdqovyrpuk","status":"False","message":"Please try again laters"}
-                
+
                 */
 
                 $accountString = $acname . " " . $accountno . " " . $bankname;
@@ -411,12 +412,12 @@ class Client extends CI_Controller
                     {
                         // print_r($result) ;
                         $mobile = $user[0]["mobile"] ;
-                        $withdraw_data = ["user_id" => $userid, 
-                        "mobile" => $mobile, 
-                        "account_name" => $acname, 
-                        "bank_name" => $bankcode, 
+                        $withdraw_data = ["user_id" => $userid,
+                        "mobile" => $mobile,
+                        "account_name" => $acname,
+                        "bank_name" => $bankcode,
                         "account_number" => $accountno,
-                         "amount" =>$amount_def, 
+                         "amount" =>$amount_def,
                          "status" => 'successful'];
 
                         $this
@@ -582,12 +583,12 @@ class Client extends CI_Controller
         // print_r($_POST);
         $user_login = ["email" => $_POST["email"], "password" => $_POST["password"], ];
 
-        
+
         /*
         $user_login = [
             "email" => 'i@olaide.me',
             "password" => '123456'
-        ]; 
+        ];
         */
         // print_r($user_login);
         $data = false;
@@ -598,10 +599,10 @@ class Client extends CI_Controller
         // //
         if ($data["users"])
         {
-            
+
             // $this->Header("Login", $userid);
             $this->session->set_userdata('userid', $data["users"][0]["id"]);
-           
+
             $this
                 ->session
                 ->set_userdata("userEmail", $data["users"][0]["email"]);
@@ -609,15 +610,15 @@ class Client extends CI_Controller
             $this
             ->session
             ->set_userdata("username", $data["users"][0]["user_id"]);
-           
+
             $userid = $data["users"][0]["id"];
 
-           
+
 
             echo json_encode(["error" => true, "message" => "Login Successful"]);
-            // "id" => $data["users"][0]["id"], "hash" => $hash, "pin" => $data["users"][0]["pin"], "bankname" => $data["users"][0]["bankname"], "accountno" => $data["users"][0]["accountno"], "walletamount" => $data["users"][0]["walletamount"], "name" => $data["users"][0]["name"], "mobile" => $data["users"][0]["mobile"], "email" => $data["users"][0]["email"], "userid" => $data["users"][0]["userid"], "fakepassword" => $data["users"][0]["fakepassword"], 
+            // "id" => $data["users"][0]["id"], "hash" => $hash, "pin" => $data["users"][0]["pin"], "bankname" => $data["users"][0]["bankname"], "accountno" => $data["users"][0]["accountno"], "walletamount" => $data["users"][0]["walletamount"], "name" => $data["users"][0]["name"], "mobile" => $data["users"][0]["mobile"], "email" => $data["users"][0]["email"], "userid" => $data["users"][0]["userid"], "fakepassword" => $data["users"][0]["fakepassword"],
             // $this->dashboard();
-            
+
         }
         else
         {
@@ -769,7 +770,7 @@ class Client extends CI_Controller
 
             echo json_encode(["error" => true, "message" => "Login Successful", "id" => $data["users"][0]["id"], "pin" => $data["users"][0]["pin"], "accountno" => $data["users"][0]["accountno"], "bankname" => $data["users"][0]["bankname"], "walletamount" => $data["users"][0]["walletamount"], "name" => $data["users"][0]["name"], "mobile" => $data["users"][0]["mobile"], "email" => $data["users"][0]["email"], "userid" => $data["users"][0]["userid"], "fakepassword" => $data["users"][0]["fakepassword"]]);
             // $this->dashboard();
-            
+
         }
         else
         {
@@ -811,7 +812,7 @@ class Client extends CI_Controller
                     }
                 }
             }
-        
+
     }
 
     public function request_withdraw()
@@ -1071,7 +1072,7 @@ class Client extends CI_Controller
         // echo  $character->data->accessToken;
         curl_close($curl);
         //var_dump($resp);
-        
+
 
         $status = $character->status;
         if ($status == true)
@@ -1192,7 +1193,7 @@ class Client extends CI_Controller
             else
             {
                 //echo $response;
-                
+
 
                 $this->data["firstname"] = $xfn = $result
                     ->data->firstName;
@@ -1225,7 +1226,7 @@ class Client extends CI_Controller
                 $this->data["message"] = $m_m = "Your OTP Code is " . $shortcode;
 
                 //  $this->email($email,  "OTP Message",  $m_m , "", "") ;
-                
+
 
                 $model = $this
                     ->ci
@@ -1324,7 +1325,7 @@ class Client extends CI_Controller
         }
 
         // echo json_encode($escrow_data);
-        
+
     }
 
     // public function add_escrow_fund($escrowId, $amount, $){
@@ -1461,7 +1462,8 @@ class Client extends CI_Controller
 
             $data['userid']  = $userid;
             $data['username'] = $username;
-
+            $loan = $this->db->select('*')->from('loan_list')->where('user_id',$_SESSION['userid'])->get();
+            $data['loan'] = $loan->result_array();
             $this
                 ->load
                 ->view("client/dashboard",$data);
@@ -1589,6 +1591,8 @@ class Client extends CI_Controller
         $this->db->from('user');
         $result = $this->db->where('id',$userid)->get();
         $data['userinfo'] = $result->result_array();
+        $lgas = $this->db->select('*')->from('lgas')->get();
+        $data['lgas'] = $lgas->result_array();
        $this->load->view('client/user_settings',$data);
     }
 
@@ -1704,370 +1708,6 @@ class Client extends CI_Controller
             ->view("client/forgot-password");
     }
 
-    public function fundpacket_mobile()
-    {
-        $userid = $this
-            ->session
-            ->userdata(SESS_PRE . "userid");
-        if (isset($userid))
-        {
-            $this->Header("Fund Packet", $userid);
-
-            $this
-                ->load
-                ->view("client/fund-packet_mobile");
-        }
-        else
-        {
-            $this->index();
-        }
-    }
-
-    public function fundpacket()
-    {
-        $userid = $this
-            ->session
-            ->userdata(SESS_PRE . "userid");
-        if (isset($userid))
-        {
-            $this->Header("Fund Packet", $userid);
-
-            $this
-                ->session
-                ->set_userdata("title", "Fund Packet");
-
-            $user = json_decode(json_encode($this
-                ->Usertbl
-                ->checkuid($userid)) , true);
-            $accountno = $user[0]["accountno"];
-            if ($accountno == "")
-            {
-                $this
-                    ->load
-                    ->view("client/fundpacket");
-            }
-            else
-            {
-                $this->profile();
-            }
-
-        }
-        else
-        {
-            $this->index();
-        }
-    }
-
-    public function escrow()
-    {
-        $userid = $this
-            ->session
-            ->userdata(SESS_PRE . "userid");
-        if (isset($userid))
-        {
-            $this->Header("Escrow", $userid);
-
-            $this
-                ->session
-                ->set_userdata("title", "Escrow");
-            $this
-                ->load
-                ->view("client/escrow");
-        }
-        else
-        {
-            $this->index();
-        }
-    }
-
-    function update_escrow_status()
-    {
-        $escrow_data = ["escrowId" => $_POST["escrowId"], "status" => $_POST["status"], ];
-
-        $data = false;
-        $data = $this
-            ->Usertbl
-            ->update_escrow_status($escrow_data);
-
-        if ($data)
-        {
-            echo json_encode(["error" => false, "message" => "Escrow " . $escrow_data["status"] . " successfully", ]);
-        }
-        else
-        {
-            echo json_encode(["error" => true, "message" => "Escrow " . $escrow_data["status"] . " failed", ]);
-        }
-    }
-
-    function reject_escrow_invoice()
-    {
-        $escrow_data = ["invoice_id" => $_POST["invoiceId"], "status" => $_POST["status"], ];
-
-        $data = false;
-        $data = $this
-            ->Usertbl
-            ->reject_escrow_invoice($escrow_data);
-
-        if ($data)
-        {
-            echo json_encode(["error" => false, "message" => "Escrow " . $escrow_data["status"] . " successfully", ]);
-        }
-        else
-        {
-            echo json_encode(["error" => false, "message" => "Escrow " . $escrow_data["status"] . " successfully", ]);
-        }
-    }
-
-    public function send_packet()
-    {
-        $packet_data = ["sender" => $this
-            ->session
-            ->userdata(SESS_PRE . "userMobile") , "receiver" => $_POST["rPhone"], "amount" => $_POST["rAmount"], ];
-
-        $u_Mobile = $this
-            ->session
-            ->userdata(SESS_PRE . "userMobile");
-        $own = json_decode(json_encode($this
-            ->Usertbl
-            ->checkmobile($u_Mobile)) , true);
-
-        $userid_log = $own[0]['id'];
-
-        $this->Header("Send Packet", $userid_log);
-
-        $data = false;
-        $data = $this
-            ->Usertbl
-            ->send_packet($packet_data);
-
-        if ($data)
-        {
-            $packet_data["newAmount"] = $this
-                ->session
-                ->userdata(SESS_PRE . "userWalletAmount") - $packet_data["amount"];
-            $data = $this
-                ->Usertbl
-                ->add_fund($withdraw_data);
-            if ($data)
-            {
-                $this
-                    ->session
-                    ->set_userdata(SESS_PRE . "userWalletAmount", $packet_data["newAmount"]);
-                echo json_encode(["error" => false, "message" => "Sent Successfully!", ]);
-            }
-            else
-            {
-                echo json_encode(["error" => true, "message" => "Sending Failed!", ]);
-            }
-        }
-        else
-        {
-            echo json_encode(["error" => true, "message" => "Sending Failed", ]);
-        }
-    }
-
-    function accept_escrow_invoice()
-    {
-
-        $uid = $_POST["userId"];
-        $wal_e = $this
-            ->Usertbl
-            ->getuserdetail($uid);
-
-        $escrow_data = ["invoice_id" => $_POST["invoiceId"], "status" => $_POST["status"], "total" => $_POST["total"], "escrow_id" => $_POST["escrowId"], "user_id" => $_POST["userId"], "user_balance" => $wal_e[0]['walletamount']];
-
-        if ($escrow_data["user_balance"] < $escrow_data["total"])
-        {
-            echo json_encode(["error" => true, "message" => "Your wallet balance is too low!", ]);
-        }
-        else
-        {
-            $escrow_fund_data = ["escrow_id" => $escrow_data["escrow_id"], "amount" => $escrow_data["total"], "status" => "added", ];
-            $data = false;
-            $data = $this
-                ->Usertbl
-                ->add_escrow_fund($escrow_fund_data);
-            if ($data)
-            {
-                $tnx_data = ["amount" => $escrow_data["total"], "user_id" => $escrow_data["user_id"], ];
-                $tnx_data["newAmount"] = $wal_e[0]['walletamount'] - $tnx_data["amount"];
-                $dat = false;
-                $dat = $this
-                    ->Usertbl
-                    ->add_fund($tnx_data);
-                if ($dat)
-                {
-                    $this
-                        ->session
-                        ->set_userdata(SESS_PRE . "userWalletAmount", $tnx_data["newAmount"]);
-
-                    $d = false;
-                    $d = $this
-                        ->Usertbl
-                        ->accept_escrow_invoice($escrow_data);
-
-                    if ($data)
-                    {
-                        echo json_encode(["error" => false, "message" => "Escrow " . $escrow_data["status"] . " successfully", ]);
-                    }
-                    else
-                    {
-                        echo json_encode(["error" => false, "message" => "Escrow " . $escrow_data["status"] . " successfully", ]);
-                    }
-                }
-                else
-                {
-                    echo json_encode(["error" => true, "message" => "Process aborted, try again!", ]);
-                }
-            }
-            else
-            {
-                echo json_encode(["error" => true, "message" => "Process aborted, try again!", ]);
-            }
-        }
-        // $data = false;
-        // $data = $this->Usertbl->reject_escrow_invoice($escrow_data);
-        
-    }
-
-    function release_all_escrow()
-    {
-
-        $escrowId = $_POST["escrowId"];
-        $data = false;
-        $data = $this
-            ->Usertbl
-            ->getescrow($escrowId);
-
-        if ($data)
-        {
-
-            $escrow_data = ["escrowId" => $escrowId, "status" => "released", ];
-
-            $this
-                ->Usertbl
-                ->update_escrow_status($escrow_data);
-
-            $escrow_data = ["escrow_id" => $escrowId, ];
-
-            $wal_a = $this
-                ->Usertbl
-                ->escrow_fund_with_status($escrow_data, "added");
-            if ($wal_a[0]['fund'])
-            {
-                $wallet_amount = $wal_a[0]['fund'];
-            }
-            else
-            {
-                $wallet_amount = 0;
-            }
-
-            $recipient = $data[0]['recipient'];
-
-            $owneresc_recipient_data = json_decode(json_encode($this
-                ->Usertbl
-                ->checkmobile($recipient)) , true);
-
-            $owneresc_recipient_data_id = $owneresc_recipient_data[0]['id'];
-            $owneresc_recipient_data_wallet = $owneresc_recipient_data[0]['walletamount'];
-            $tnx_data = ["amount" => $wallet_amount, "user_id" => $owneresc_recipient_data_id, ];
-            $tnx_data["newAmount"] = $owneresc_recipient_data_wallet + $wallet_amount;
-            $dat = false;
-            $dat = $this
-                ->Usertbl
-                ->add_fund($tnx_data);
-
-            echo json_encode(["error" => true, "message" => "successful", ]);
-        }
-        else
-        {
-            echo json_encode(["error" => false, "message" => "error! please try again", ]);
-        }
-    }
-
-    function released_escrow_invoice()
-    {
-
-        $uid = $_POST["userId"];
-        $wal_e = $this
-            ->Usertbl
-            ->getuserdetail($uid);
-
-        $escrow_data = ["invoice_id" => $_POST["invoiceId"], "status" => $_POST["status"], "total" => $_POST["total"], "escrow_id" => $_POST["escrowId"], "user_id" => $_POST["userId"], "user_balance" => $wal_e[0]['walletamount']];
-
-        if ($escrow_data["user_balance"] < $escrow_data["total"])
-        {
-            echo json_encode(["error" => true, "message" => "Your wallet balance is too low!", ]);
-        }
-        else
-        {
-            $escrow_fund_data = ["escrow_id" => $escrow_data["escrow_id"], "amount" => $escrow_data["total"], "status" => "released", ];
-            $data = false;
-            $data = $this
-                ->Usertbl
-                ->add_escrow_fund($escrow_fund_data);
-            if ($data)
-            {
-                $tnx_data = ["amount" => $escrow_data["total"], "user_id" => $escrow_data["user_id"], ];
-                $tnx_data["newAmount"] = $wal_e[0]['walletamount'] - $tnx_data["amount"];
-                $dat = false;
-                $dat = $this
-                    ->Usertbl
-                    ->add_fund($tnx_data);
-                if ($dat)
-                {
-                    $this
-                        ->session
-                        ->set_userdata(SESS_PRE . "userWalletAmount", $tnx_data["newAmount"]);
-
-                    //Pay The seller directly
-                    $escrow_id = $_POST["escrowId"];
-                    $owneresc = json_decode(json_encode($this
-                        ->Usertbl
-                        ->getescrow($escrow_id)) , true);
-                    $owneresc_recipient = $owneresc[0]['recipient'];
-
-                    $owneresc_recipient_data = json_decode(json_encode($this
-                        ->Usertbl
-                        ->checkmobile($owneresc_recipient)) , true);
-
-                    $owneresc_recipient_data_id = $owneresc_recipient_data[0]['id'];
-                    $owneresc_recipient_data_wallet = $owneresc_recipient_data[0]['walletamount'];
-                    $tnx_data = ["amount" => $escrow_data["total"], "user_id" => $owneresc_recipient_data_id, ];
-                    $tnx_data["newAmount"] = $owneresc_recipient_data_wallet + $tnx_data["amount"];
-                    $dat = false;
-                    $dat = $this
-                        ->Usertbl
-                        ->add_fund($tnx_data);
-
-                    $d = false;
-                    $d = $this
-                        ->Usertbl
-                        ->accept_escrow_invoice($escrow_data);
-
-                    if ($data)
-                    {
-                        echo json_encode(["error" => false, "message" => "Escrow " . $escrow_data["status"] . " successfully", ]);
-                    }
-                    else
-                    {
-                        echo json_encode(["error" => false, "message" => "Escrow " . $escrow_data["status"] . " successfully", ]);
-                    }
-                }
-                else
-                {
-                    echo json_encode(["error" => true, "message" => "Process aborted, try again!", ]);
-                }
-            }
-            else
-            {
-                echo json_encode(["error" => true, "message" => "Process aborted, try again!", ]);
-            }
-        }
-        // $data = false;
-        // $data = $this->Usertbl->reject_escrow_invoice($escrow_data);
-        
-    }
 
     public function register()
     {
@@ -2252,28 +1892,28 @@ class Client extends CI_Controller
             // $startConnection = curl_init($paystack_api_url);
             // curl_setopt($startConnection, CURLOPT_RETURNTRANSFER, true);
             // $result = curl_exec($startConnection);
-            // $banks = json_decode($result); 
+            // $banks = json_decode($result);
             if($banks){
                 $cookie= array(
 
                     'name'   => 'user_phone',
-                    'value'  => $code,                            
-                    'expire' => '180',                                                                                   
+                    'value'  => $code,
+                    'expire' => '180',
                     'secure' => TRUE
-         
+
                 );
-         
+
                 $this->input->set_cookie($cookie);
                 $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array(['message'=>"yes",'data'=>$banks,'phone'=>$newphone])));
-            }     
+            }
 
           } catch(Exception $e) {
             echo $e->getMessage();
           }
 
-        
+
 
         //         $client = new \GuzzleHttp\Client();
         // $response = $client->post(
@@ -2317,7 +1957,7 @@ class Client extends CI_Controller
 
                 }
 
-               
+
             }else{
                 $this->output
                 ->set_content_type('application/json')
@@ -2328,7 +1968,7 @@ class Client extends CI_Controller
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array(['message'=>"yes",'status'=>'expired'])));
         }
-        
+
     }
 
     public function updategeneralform(){
@@ -2341,7 +1981,7 @@ class Client extends CI_Controller
             $new_image_name = "/imgName".time() . str_replace(str_split(' ()\\/,:*?"<>|'), '',
             $_FILES['userimage']['name']);
             $config = array();
-            $config['upload_path'] = './uploads/userspicture/'; 
+            $config['upload_path'] = './uploads/userspicture/';
             $config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
             $config['max_size']  = '0';
             $this->load->library('upload', $config);
@@ -2355,7 +1995,7 @@ class Client extends CI_Controller
                     'gender' => $gender,
                     'ppix' => $path.$dataimg['file_name']
                 );
-                
+
             }else{
 
             }
@@ -2367,7 +2007,7 @@ class Client extends CI_Controller
                 'gender' => $gender
             );
         }
-        
+
 
         $this->db->where('id', $_SESSION['userid']);
         $result = $this->db->update('user', $data);
@@ -2380,14 +2020,14 @@ class Client extends CI_Controller
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array(['status'=>400,'message'=>"Error Processing Now"])));
         }
-        
+
 
     }
 
     public function uploadidentity(){
         $frontid = $_POST['frontid'];
         $backid = $_POST['backid'];
-        
+
 
         if(!empty($_FILES['frontid']['name']) && !empty($_FILES['backid']['name'])){
             $font_img_name = "/imgName".time() . str_replace(str_split(' ()\\/,:*?"<>|'), '',
@@ -2396,7 +2036,7 @@ class Client extends CI_Controller
             $_FILES['backid']['name']);
 
             $config = array();
-            $config['upload_path'] = './uploads/identity/'; 
+            $config['upload_path'] = './uploads/identity/';
             $config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
             $config['max_size']  = '0';
             $this->load->library('upload', $config);
@@ -2406,11 +2046,12 @@ class Client extends CI_Controller
                     $databackimg = $this->upload->data();
                     $path = "uploads/identity/";
                     $data = array(
-                        
+
                         'id_front' => $path.$datafrontimg['file_name'],
-                        'id_back' => $path.$databackimg['file_name']
+                        'id_back' => $path.$databackimg['file_name'],
+                        'status' => "done"
                     );
-                  
+
 
                 }
                 $this->db->where('id', $_SESSION['userid']);
@@ -2424,16 +2065,16 @@ class Client extends CI_Controller
                         ->set_content_type('application/json')
                         ->set_output(json_encode(array(['status'=>400,'message'=>"Error Processing Now"])));
                 }
-        
+
             }else{
 
             }
         }else{
-            
-        }
-        
 
-        
+        }
+
+
+
 
     }
 
@@ -2444,14 +2085,15 @@ class Client extends CI_Controller
         $address2 = $_POST['address2'];
         $occupation = $_POST['occupation'];
         $industry = $_POST['industry'];
-        
+
         $data = array(
             'state_id' => $state,
             'lgas_id' => $lga,
             'addr1' => $address1,
             'addr2' => $address2,
             'occupation' => $occupation,
-            'industry' => $industry
+            'industry' => $industry,
+            'status' => "almost"
         );
 
         $this->db->where('id', $_SESSION['userid']);
@@ -2465,12 +2107,160 @@ class Client extends CI_Controller
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array(['status'=>400,'message'=>"Error Processing Now"])));
         }
-        
 
-        
+
+
 
     }
-    
+
+    public function new_loan()
+    {
+    //   $states = $this->db->select('*')->from('states')->get();
+    //   $data['states'] = $states->result_array();
+            $userid =  $this
+            ->session
+            ->userdata("userid");
+        $this->db->select('*');
+        $this->db->from('user');
+        $result = $this->db->where('id',$userid)->get();
+        $data['userinfo'] = $result->result_array();
+        $states = $this->db->select('*')->from('states')->get();
+        $data['states'] = $states->result_array();
+       $this->load->view('client/newloan',$data);
+    }
+
+
+    public function usersubmitloan(){
+        $user = $_SESSION['userid'];
+        $amount =  $this->input->post('amount');
+        $loan_purpose =  $this->input->post('description');
+        $duration =  $this->input->post('duration');
+        $repayment_schedule =  $this->input->post('repayment_schedule');
+        $loan_type =  $this->input->post('loan_type');
+        $apartment_description =  $this->input->post('apartment_description');
+        $state_id =  $this->input->post('state_id');
+        $lga_id =  $this->input->post('lga_id');
+        $owners_name =  $this->input->post('owners_name');
+        $owners_phone =  $this->input->post('owners_phone');
+        $guarantor1_image =  $this->input->post('guarantor1_image');
+        $guarantor1_relationship =  $this->input->post('guarantor1_relationship');
+        $guarantor1_name =  $this->input->post('guarantor1_name');
+        $guarantor1_phone =  $this->input->post('guarantor1_phone');
+        $guarantor1_address =  $this->input->post('guarantor1_address');
+        $guarantor2_image =  $this->input->post('guarantor2_image');
+        $guarantor2_relationship =  $this->input->post('guarantor1_relationship');
+        $guarantor2_name =  $this->input->post('guarantor1_name');
+        $guarantor2_phone =  $this->input->post('guarantor1_phone');
+        $guarantor2_address =  $this->input->post('guarantor_address');
+
+
+        $newGuarantor1_image = "/imgName".time() . str_replace(str_split(' ()\\/,:*?"<>|'), '',
+        $_FILES['guarantor1_image']['name']);
+        $newGuarantor2_image = "/imgName".time() . str_replace(str_split(' ()\\/,:*?"<>|'), '',
+        $_FILES['guarantor2_image']['name']);
+
+        $config = array();
+        $config['upload_path'] = './uploads/guarantor/';
+        $config['allowed_types'] = 'gif|jpg|png|bmp|jpeg';
+        $config['max_size']  = '0';
+        $this->load->library('upload', $config);
+        // check for image upload
+        if($this->upload->do_upload('guarantor1_image')){
+            $datagimg1 = $this->upload->data();
+            if($this->upload->do_upload('guarantor2_image')){
+                $datagimg2 = $this->upload->data();
+                $path = "uploads/guarantor/";
+
+                $data = array(
+                    'user_id' =>  $user ,
+                    'amount' =>  $amount,
+                    'loan_purpose' => $loan_purpose,
+                    'duration' => $duration,
+                    'repayment_schedule' => $repayment_schedule,
+                    'loan_type' => $loan_type,
+                    'apartment_description' => $apartment_description,
+                    'state_id' =>  $state_id,
+                    'lga_id' => $lga_id,
+                    'owners_name' => $owners_name,
+                    'owners_phone' => $owners_phone,
+                    'guarantor1_image' => $path.$datagimg1['file_name'],
+                    'guarantor1_address' => $guarantor1_address,
+                    'guarantor1_relationship' => $guarantor1_relationship,
+                    'guarantor1_name' => $guarantor1_name,
+                    'guarantor1_phone' => $guarantor1_phone,
+                    'guarantor2_image' => $path.$datagimg2['file_name'],
+                    'guarantor2_address' => $guarantor2_address,
+                    'guarantor2_relationship' => $guarantor2_relationship,
+                    'guarantor2_name' => $guarantor2_name,
+                    'guarantor2_phone' => $guarantor2_phone,
+                    'loan_hash' => rand(100,999).$user.rand(10,99)
+                );
+
+                $result = $this->db->insert('loan_list', $data);
+                if($result){
+                    $this->output
+                        ->set_content_type('application/json')
+                        ->set_output(json_encode(array(['status'=>200,'message'=>"yes"])));
+                }else{
+                    $this->output
+                        ->set_content_type('application/json')
+                        ->set_output(json_encode(array(['status'=>400,'message'=>"Error Processing Now"])));
+                }
+            }else{
+                    $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode(array(['status'=>400,'message'=>"Error uploading Guarantor2 Image"])));
+            }
+        }else{
+            $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode(array(['status'=>400,'message'=>"Error Uploading Guarantor 1 Image"])));
+        }
+
+    }
+
+
+    public function list_loan()
+    {
+        if(isset($_SESSION['userid'])){
+            $user = $_SESSION['userid'];
+            $loan = $this->db->select('*')->from('loan_list')->where('user_id',$_SESSION['userid'])->get();
+            $data['loan_lists'] = $loan->result_array();
+            $this
+                ->load
+                ->view("client/list_loan",$data);
+        }
+    }
+
+    public function viewloan(){
+        $id = $this->uri->segment('3');
+
+        if(isset($_SESSION['userid'])){
+            $user = $_SESSION['userid'];
+            $loan = $this->db->select('*')->from('loan_list')->where('user_id',$_SESSION['userid'])->where('id',$id)->get();
+            if($loan->result_array()){
+                $userid =  $this
+            ->session
+            ->userdata("userid");
+        $this->db->select('*');
+        $this->db->from('user');
+
+        $result = $this->db->where('id',$userid)->get();
+        $data['userinfo'] = $result->result_array();
+        $states = $this->db->select('*')->from('states')->get();
+        $data['states'] = $states->result_array();
+        $lgas = $this->db->select('*')->from('lgas')->get();
+        $data['lgas'] = $lgas->result_array();
+                $data['loan_lists'] = $loan->result_array();
+                $this
+                    ->load
+                    ->view("client/viewloan",$data);
+            }else{
+                redirect($this->agent->referrer());
+            }
+        }
+    }
+
 
 }
 

@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="<?=base_url();?>uploads/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" />
 		<link rel="stylesheet" href="<?=base_url();?>uploads/vendor/morris/morris.css" />
 		<link rel="stylesheet" href="<?=base_url();?>vendor/pnotify/pnotify.custom.css" />
-
+		<link rel="stylesheet" href="<?=base_url();?>vendor/datatables/media/css/dataTables.bootstrap5.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="<?=base_url();?>uploads/css/theme.css" />

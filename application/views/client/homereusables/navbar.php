@@ -1,7 +1,7 @@
 <header class="header">
 				<div class="logo-container">
 					<a href="../4.0.0" class="logo">
-						<img src="<?=base_url();?>uploads/img/logo.png" width="75" height="35" alt="Porto Admin" />
+						<img src="<?=base_url();?>uploads/img/rentalbuz.png"  alt="Rentalbuz Admin" />
 					</a>
 
 					<div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -23,7 +23,7 @@
 					<span class="separator"></span>
 
 					<ul class="notifications">
-					
+
 						<li>
 							<a href="#" class="dropdown-toggle notification-icon" data-bs-toggle="dropdown">
 								<i class="bx bx-envelope"></i>
