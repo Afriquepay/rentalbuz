@@ -8,6 +8,8 @@ class Client extends CI_Controller
         parent::__construct();
         $this->ci = & get_instance();
         $this->load->model("Crud");
+        $this->load->model("Loanlist");
+        $this->load->model("Usertbl");
         $this->load->helper('cookie');
         $this->load->library('user_agent');
         $this
@@ -2008,9 +2010,7 @@ class Client extends CI_Controller
             );
         }
 
-
-        $this->db->where('id', $_SESSION['userid']);
-        $result = $this->db->update('user', $data);
+        $result = $this->Usertbl->update_user($data,$_SESSION['userid']);
         if($result){
             $this->output
                 ->set_content_type('application/json')
